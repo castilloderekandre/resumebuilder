@@ -1,0 +1,16 @@
+C:\Users\Tsuji\source\repos\ResumeBuilder\bin\Debug\net10.0-windows\ResumeBuilder.exe
+C:\Users\Tsuji\source\repos\ResumeBuilder\bin\Debug\net10.0-windows\ResumeBuilder.deps.json
+C:\Users\Tsuji\source\repos\ResumeBuilder\bin\Debug\net10.0-windows\ResumeBuilder.runtimeconfig.json
+C:\Users\Tsuji\source\repos\ResumeBuilder\bin\Debug\net10.0-windows\ResumeBuilder.dll
+C:\Users\Tsuji\source\repos\ResumeBuilder\bin\Debug\net10.0-windows\ResumeBuilder.pdb
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.Form1.resources
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.csproj.GenerateResource.cache
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.AssemblyInfoInputs.cache
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.AssemblyInfo.cs
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.csproj.CoreCompileInputs.cache
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.dll
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\refint\ResumeBuilder.dll
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.pdb
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ResumeBuilder.genruntimeconfig.cache
+C:\Users\Tsuji\source\repos\ResumeBuilder\obj\Debug\net10.0-windows\ref\ResumeBuilder.dll
