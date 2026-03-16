@@ -29,35 +29,41 @@
         private void InitializeComponent()
         {
             tabControl1 = new TabControl();
-            ResumesOverviewTabPage = new TabPage();
-            SectionsOverviewTabPage = new TabPage();
-            SectionObjectsOverviewTabPage = new TabPage();
-            listBox1 = new ListBox();
-            label1 = new Label();
+            HomeTabPage = new TabPage();
+            listBox2 = new ListBox();
+            pictureBox1 = new PictureBox();
+            label4 = new Label();
+            panel1 = new Panel();
+            label15 = new Label();
+            ItemsNotSelectedListBox = new ListBox();
+            button10 = new Button();
+            button9 = new Button();
             label2 = new Label();
             textBox1 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
             label3 = new Label();
-            listBox2 = new ListBox();
+            SelectedItemsListBox = new ListBox();
             button3 = new Button();
             button4 = new Button();
-            label4 = new Label();
-            pictureBox1 = new PictureBox();
-            listBox3 = new ListBox();
-            button5 = new Button();
-            button6 = new Button();
-            label5 = new Label();
-            label6 = new Label();
-            listBox4 = new ListBox();
-            panel1 = new Panel();
-            panel3 = new Panel();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
-            button10 = new Button();
-            button11 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            label1 = new Label();
+            this.SectionOverviewTabPage = new TabPage();
+            panel4 = new Panel();
+            button16 = new Button();
+            button15 = new Button();
+            label14 = new Label();
+            listBox6 = new ListBox();
+            button14 = new Button();
+            button13 = new Button();
+            label13 = new Label();
+            listBox5 = new ListBox();
+            label18 = new Label();
+            textBox7 = new TextBox();
             button12 = new Button();
+            button11 = new Button();
+            listBox4 = new ListBox();
+            label6 = new Label();
+            EntryOverviewTabPage = new TabPage();
             panel2 = new Panel();
             label12 = new Label();
             richTextBox1 = new RichTextBox();
@@ -74,100 +80,132 @@
             dateTimePicker1 = new DateTimePicker();
             label7 = new Label();
             textBox2 = new TextBox();
-            panel4 = new Panel();
-            label18 = new Label();
-            textBox7 = new TextBox();
-            listBox5 = new ListBox();
-            label13 = new Label();
-            button13 = new Button();
-            button14 = new Button();
-            listBox6 = new ListBox();
-            label14 = new Label();
-            button15 = new Button();
-            button16 = new Button();
-            listBox7 = new ListBox();
-            label15 = new Label();
+            RecompilePreviewButton = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            pictureBox2 = new PictureBox();
+            label5 = new Label();
+            button7 = new Button();
+            button8 = new Button();
             tabControl1.SuspendLayout();
-            ResumesOverviewTabPage.SuspendLayout();
-            SectionsOverviewTabPage.SuspendLayout();
-            SectionObjectsOverviewTabPage.SuspendLayout();
+            HomeTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            panel2.SuspendLayout();
+            this.SectionOverviewTabPage.SuspendLayout();
             panel4.SuspendLayout();
+            EntryOverviewTabPage.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(ResumesOverviewTabPage);
-            tabControl1.Controls.Add(SectionsOverviewTabPage);
-            tabControl1.Controls.Add(SectionObjectsOverviewTabPage);
+            tabControl1.Controls.Add(HomeTabPage);
+            tabControl1.Controls.Add(this.SectionOverviewTabPage);
+            tabControl1.Controls.Add(EntryOverviewTabPage);
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1538, 497);
+            tabControl1.Size = new Size(1538, 744);
             tabControl1.TabIndex = 1;
             // 
-            // ResumesOverviewTabPage
+            // HomeTabPage
             // 
-            ResumesOverviewTabPage.Controls.Add(panel3);
-            ResumesOverviewTabPage.Controls.Add(panel1);
-            ResumesOverviewTabPage.Controls.Add(pictureBox1);
-            ResumesOverviewTabPage.Controls.Add(label4);
-            ResumesOverviewTabPage.Controls.Add(button2);
-            ResumesOverviewTabPage.Controls.Add(button1);
-            ResumesOverviewTabPage.Controls.Add(label1);
-            ResumesOverviewTabPage.Controls.Add(listBox1);
-            ResumesOverviewTabPage.Location = new Point(4, 24);
-            ResumesOverviewTabPage.Name = "ResumesOverviewTabPage";
-            ResumesOverviewTabPage.Padding = new Padding(3);
-            ResumesOverviewTabPage.Size = new Size(1530, 469);
-            ResumesOverviewTabPage.TabIndex = 0;
-            ResumesOverviewTabPage.Text = "Resumes Overview";
-            ResumesOverviewTabPage.UseVisualStyleBackColor = true;
+            HomeTabPage.Controls.Add(RecompilePreviewButton);
+            HomeTabPage.Controls.Add(panel1);
+            HomeTabPage.Controls.Add(pictureBox1);
+            HomeTabPage.Controls.Add(label4);
+            HomeTabPage.Controls.Add(listBox2);
+            HomeTabPage.Controls.Add(button2);
+            HomeTabPage.Controls.Add(button1);
+            HomeTabPage.Controls.Add(label1);
+            HomeTabPage.Location = new Point(4, 24);
+            HomeTabPage.Name = "HomeTabPage";
+            HomeTabPage.Padding = new Padding(3);
+            HomeTabPage.Size = new Size(1530, 716);
+            HomeTabPage.TabIndex = 0;
+            HomeTabPage.Text = "Home";
+            HomeTabPage.UseVisualStyleBackColor = true;
             // 
-            // SectionsOverviewTabPage
+            // listBox2
             // 
-            SectionsOverviewTabPage.Controls.Add(panel4);
-            SectionsOverviewTabPage.Controls.Add(button12);
-            SectionsOverviewTabPage.Controls.Add(button11);
-            SectionsOverviewTabPage.Controls.Add(listBox4);
-            SectionsOverviewTabPage.Controls.Add(label6);
-            SectionsOverviewTabPage.Location = new Point(4, 24);
-            SectionsOverviewTabPage.Name = "SectionsOverviewTabPage";
-            SectionsOverviewTabPage.Padding = new Padding(3);
-            SectionsOverviewTabPage.Size = new Size(1530, 469);
-            SectionsOverviewTabPage.TabIndex = 1;
-            SectionsOverviewTabPage.Text = "Sections Overview";
-            SectionsOverviewTabPage.UseVisualStyleBackColor = true;
+            listBox2.FormattingEnabled = true;
+            listBox2.Location = new Point(6, 21);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(178, 274);
+            listBox2.TabIndex = 20;
             // 
-            // SectionObjectsOverviewTabPage
+            // pictureBox1
             // 
-            SectionObjectsOverviewTabPage.Controls.Add(panel2);
-            SectionObjectsOverviewTabPage.Location = new Point(4, 24);
-            SectionObjectsOverviewTabPage.Name = "SectionObjectsOverviewTabPage";
-            SectionObjectsOverviewTabPage.Size = new Size(1530, 469);
-            SectionObjectsOverviewTabPage.TabIndex = 2;
-            SectionObjectsOverviewTabPage.Text = "Section Objects Overview";
-            SectionObjectsOverviewTabPage.UseVisualStyleBackColor = true;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Location = new Point(190, 21);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 274);
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
             // 
-            // listBox1
+            // label4
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(6, 21);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(178, 274);
-            listBox1.TabIndex = 0;
+            label4.AutoSize = true;
+            label4.Location = new Point(190, 3);
+            label4.Name = "label4";
+            label4.Size = new Size(48, 15);
+            label4.TabIndex = 10;
+            label4.Text = "Preview";
             // 
-            // label1
+            // panel1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Resumes";
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(label15);
+            panel1.Controls.Add(ItemsNotSelectedListBox);
+            panel1.Controls.Add(button10);
+            panel1.Controls.Add(button9);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(SelectedItemsListBox);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button4);
+            panel1.Location = new Point(396, 21);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(557, 346);
+            panel1.TabIndex = 16;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(321, 45);
+            label15.Name = "label15";
+            label15.Size = new Size(106, 15);
+            label15.TabIndex = 13;
+            label15.Text = "Items Not Selected";
+            // 
+            // ItemsNotSelectedListBox
+            // 
+            ItemsNotSelectedListBox.FormattingEnabled = true;
+            ItemsNotSelectedListBox.Location = new Point(321, 63);
+            ItemsNotSelectedListBox.Name = "ItemsNotSelectedListBox";
+            ItemsNotSelectedListBox.Size = new Size(150, 229);
+            ItemsNotSelectedListBox.TabIndex = 12;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(240, 93);
+            button10.Name = "button10";
+            button10.Size = new Size(75, 23);
+            button10.TabIndex = 11;
+            button10.Text = ">";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(240, 64);
+            button9.Name = "button9";
+            button9.Size = new Size(75, 23);
+            button9.TabIndex = 10;
+            button9.Text = "<";
+            button9.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -185,40 +223,22 @@
             textBox1.Size = new Size(150, 23);
             textBox1.TabIndex = 3;
             // 
-            // button1
-            // 
-            button1.Location = new Point(190, 21);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(190, 50);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 5;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(84, 46);
             label3.Name = "label3";
-            label3.Size = new Size(79, 15);
+            label3.Size = new Size(139, 15);
             label3.TabIndex = 6;
-            label3.Text = "Section Order";
+            label3.Text = "Selected Items and Order";
             // 
-            // listBox2
+            // SelectedItemsListBox
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(84, 64);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(150, 229);
-            listBox2.TabIndex = 7;
+            SelectedItemsListBox.FormattingEnabled = true;
+            SelectedItemsListBox.Location = new Point(84, 64);
+            SelectedItemsListBox.Name = "SelectedItemsListBox";
+            SelectedItemsListBox.Size = new Size(150, 229);
+            SelectedItemsListBox.TabIndex = 7;
             // 
             // button3
             // 
@@ -238,58 +258,181 @@
             button4.Text = "DOWN";
             button4.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // button2
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(271, 3);
-            label4.Name = "label4";
-            label4.Size = new Size(48, 15);
-            label4.TabIndex = 10;
-            label4.Text = "Preview";
+            button2.Location = new Point(109, 301);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 5;
+            button2.Text = "Delete";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // button1
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(271, 23);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 272);
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
+            button1.Location = new Point(6, 303);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 4;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // listBox3
+            // label1
             // 
-            listBox3.FormattingEnabled = true;
-            listBox3.Location = new Point(84, 20);
-            listBox3.Name = "listBox3";
-            listBox3.Size = new Size(150, 274);
-            listBox3.TabIndex = 12;
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Resumes";
             // 
-            // button5
+            // SectionOverviewTabPage
             // 
-            button5.Location = new Point(3, 63);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 13;
-            button5.Text = "UP";
-            button5.UseVisualStyleBackColor = true;
+            this.SectionOverviewTabPage.Controls.Add(button6);
+            this.SectionOverviewTabPage.Controls.Add(pictureBox2);
+            this.SectionOverviewTabPage.Controls.Add(label5);
+            this.SectionOverviewTabPage.Controls.Add(panel4);
+            this.SectionOverviewTabPage.Controls.Add(button12);
+            this.SectionOverviewTabPage.Controls.Add(button11);
+            this.SectionOverviewTabPage.Controls.Add(listBox4);
+            this.SectionOverviewTabPage.Controls.Add(label6);
+            this.SectionOverviewTabPage.Location = new Point(4, 24);
+            this.SectionOverviewTabPage.Name = "SectionOverviewTabPage";
+            this.SectionOverviewTabPage.Padding = new Padding(3);
+            this.SectionOverviewTabPage.Size = new Size(1530, 716);
+            this.SectionOverviewTabPage.TabIndex = 1;
+            this.SectionOverviewTabPage.Text = "Section Overview";
+            this.SectionOverviewTabPage.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // panel4
             // 
-            button6.Location = new Point(3, 92);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 14;
-            button6.Text = "DOWN";
-            button6.UseVisualStyleBackColor = true;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(button8);
+            panel4.Controls.Add(button16);
+            panel4.Controls.Add(button15);
+            panel4.Controls.Add(label14);
+            panel4.Controls.Add(listBox6);
+            panel4.Controls.Add(button14);
+            panel4.Controls.Add(button13);
+            panel4.Controls.Add(label13);
+            panel4.Controls.Add(listBox5);
+            panel4.Controls.Add(label18);
+            panel4.Controls.Add(textBox7);
+            panel4.Location = new Point(396, 21);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(545, 358);
+            panel4.TabIndex = 8;
             // 
-            // label5
+            // button16
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(84, 2);
-            label5.Name = "label5";
-            label5.Size = new Size(122, 15);
-            label5.TabIndex = 15;
-            label5.Text = "Section Objects Order";
+            button16.Location = new Point(2, 56);
+            button16.Name = "button16";
+            button16.Size = new Size(75, 23);
+            button16.TabIndex = 13;
+            button16.Text = "DOWN";
+            button16.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            button15.Location = new Point(2, 28);
+            button15.Name = "button15";
+            button15.Size = new Size(75, 23);
+            button15.TabIndex = 12;
+            button15.Text = "UP";
+            button15.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(314, 10);
+            label14.Name = "label14";
+            label14.Size = new Size(112, 15);
+            label14.TabIndex = 11;
+            label14.Text = "Entries Not Selected";
+            // 
+            // listBox6
+            // 
+            listBox6.FormattingEnabled = true;
+            listBox6.Location = new Point(314, 28);
+            listBox6.Name = "listBox6";
+            listBox6.Size = new Size(144, 199);
+            listBox6.TabIndex = 10;
+            // 
+            // button14
+            // 
+            button14.Location = new Point(233, 57);
+            button14.Name = "button14";
+            button14.Size = new Size(75, 23);
+            button14.TabIndex = 9;
+            button14.Text = "<";
+            button14.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            button13.Location = new Point(233, 28);
+            button13.Name = "button13";
+            button13.Size = new Size(75, 23);
+            button13.TabIndex = 8;
+            button13.Text = ">";
+            button13.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(83, 10);
+            label13.Name = "label13";
+            label13.Size = new Size(145, 15);
+            label13.TabIndex = 7;
+            label13.Text = "Selected Entries and Order";
+            // 
+            // listBox5
+            // 
+            listBox5.FormattingEnabled = true;
+            listBox5.Location = new Point(83, 28);
+            listBox5.Name = "listBox5";
+            listBox5.Size = new Size(144, 199);
+            listBox5.TabIndex = 6;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(3, 262);
+            label18.Name = "label18";
+            label18.Size = new Size(72, 15);
+            label18.TabIndex = 5;
+            label18.Text = "Section Title";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(3, 280);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(144, 23);
+            textBox7.TabIndex = 4;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(109, 301);
+            button12.Name = "button12";
+            button12.Size = new Size(75, 23);
+            button12.TabIndex = 3;
+            button12.Text = "DELETE";
+            button12.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(6, 301);
+            button11.Name = "button11";
+            button11.Size = new Size(75, 23);
+            button11.TabIndex = 2;
+            button11.Text = "ADD";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // listBox4
+            // 
+            listBox4.FormattingEnabled = true;
+            listBox4.Location = new Point(6, 21);
+            listBox4.Name = "listBox4";
+            listBox4.Size = new Size(178, 274);
+            listBox4.TabIndex = 1;
             // 
             // label6
             // 
@@ -300,103 +443,20 @@
             label6.TabIndex = 0;
             label6.Text = "Sections";
             // 
-            // listBox4
+            // EntryOverviewTabPage
             // 
-            listBox4.FormattingEnabled = true;
-            listBox4.Location = new Point(6, 21);
-            listBox4.Name = "listBox4";
-            listBox4.Size = new Size(150, 94);
-            listBox4.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label15);
-            panel1.Controls.Add(listBox7);
-            panel1.Controls.Add(button10);
-            panel1.Controls.Add(button9);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(listBox2);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button4);
-            panel1.Location = new Point(477, 21);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(507, 305);
-            panel1.TabIndex = 16;
-            // 
-            // panel3
-            // 
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(button8);
-            panel3.Controls.Add(button7);
-            panel3.Controls.Add(button5);
-            panel3.Controls.Add(listBox3);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(button6);
-            panel3.Location = new Point(1022, 21);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(474, 305);
-            panel3.TabIndex = 18;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(240, 63);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 23);
-            button7.TabIndex = 16;
-            button7.Text = "ADD";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(240, 92);
-            button8.Name = "button8";
-            button8.Size = new Size(75, 23);
-            button8.TabIndex = 17;
-            button8.Text = "REMOVE";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(240, 64);
-            button9.Name = "button9";
-            button9.Size = new Size(75, 23);
-            button9.TabIndex = 10;
-            button9.Text = "<";
-            button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            button10.Location = new Point(240, 93);
-            button10.Name = "button10";
-            button10.Size = new Size(75, 23);
-            button10.TabIndex = 11;
-            button10.Text = ">";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            button11.Location = new Point(162, 21);
-            button11.Name = "button11";
-            button11.Size = new Size(75, 23);
-            button11.TabIndex = 2;
-            button11.Text = "ADD";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            button12.Location = new Point(162, 50);
-            button12.Name = "button12";
-            button12.Size = new Size(75, 23);
-            button12.TabIndex = 3;
-            button12.Text = "DELETE";
-            button12.UseVisualStyleBackColor = true;
+            EntryOverviewTabPage.Controls.Add(panel2);
+            EntryOverviewTabPage.Location = new Point(4, 24);
+            EntryOverviewTabPage.Name = "EntryOverviewTabPage";
+            EntryOverviewTabPage.Size = new Size(1530, 716);
+            EntryOverviewTabPage.TabIndex = 2;
+            EntryOverviewTabPage.Text = "Entry Overview";
+            EntryOverviewTabPage.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(button7);
             panel2.Controls.Add(label12);
             panel2.Controls.Add(richTextBox1);
             panel2.Controls.Add(checkBox3);
@@ -414,7 +474,7 @@
             panel2.Controls.Add(textBox2);
             panel2.Location = new Point(297, 15);
             panel2.Name = "panel2";
-            panel2.Size = new Size(545, 401);
+            panel2.Size = new Size(545, 428);
             panel2.TabIndex = 7;
             // 
             // label12
@@ -474,9 +534,9 @@
             label10.AutoSize = true;
             label10.Location = new Point(3, 136);
             label10.Name = "label10";
-            label10.Size = new Size(53, 15);
+            label10.Size = new Size(75, 15);
             label10.TabIndex = 12;
-            label10.Text = "Location";
+            label10.Text = "Organization";
             // 
             // checkBox2
             // 
@@ -495,7 +555,7 @@
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(109, 19);
             checkBox1.TabIndex = 10;
-            checkBox1.Text = "Recieving Date?";
+            checkBox1.Text = "Receiving Date?";
             checkBox1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
@@ -535,169 +595,112 @@
             label7.AutoSize = true;
             label7.Location = new Point(3, 4);
             label7.Name = "label7";
-            label7.Size = new Size(72, 15);
+            label7.Size = new Size(60, 15);
             label7.TabIndex = 5;
-            label7.Text = "Section Title";
+            label7.Text = "Entry Title";
             // 
             // textBox2
             // 
             textBox2.Location = new Point(3, 22);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
+            textBox2.Size = new Size(200, 23);
             textBox2.TabIndex = 4;
             // 
-            // panel4
+            // RecompilePreviewButton
             // 
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(button16);
-            panel4.Controls.Add(button15);
-            panel4.Controls.Add(label14);
-            panel4.Controls.Add(listBox6);
-            panel4.Controls.Add(button14);
-            panel4.Controls.Add(button13);
-            panel4.Controls.Add(label13);
-            panel4.Controls.Add(listBox5);
-            panel4.Controls.Add(label18);
-            panel4.Controls.Add(textBox7);
-            panel4.Location = new Point(243, 21);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(545, 401);
-            panel4.TabIndex = 8;
+            RecompilePreviewButton.Location = new Point(190, 301);
+            RecompilePreviewButton.Name = "RecompilePreviewButton";
+            RecompilePreviewButton.Size = new Size(200, 23);
+            RecompilePreviewButton.TabIndex = 21;
+            RecompilePreviewButton.Text = "Recompile";
+            RecompilePreviewButton.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // button5
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(3, 4);
-            label18.Name = "label18";
-            label18.Size = new Size(72, 15);
-            label18.TabIndex = 5;
-            label18.Text = "Section Title";
+            button5.Dock = DockStyle.Bottom;
+            button5.Location = new Point(0, 321);
+            button5.Name = "button5";
+            button5.Size = new Size(555, 23);
+            button5.TabIndex = 14;
+            button5.Text = "Save Changes";
+            button5.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // button6
             // 
-            textBox7.Location = new Point(3, 22);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 4;
+            button6.Location = new Point(190, 301);
+            button6.Name = "button6";
+            button6.Size = new Size(200, 23);
+            button6.TabIndex = 24;
+            button6.Text = "Recompile";
+            button6.UseVisualStyleBackColor = true;
             // 
-            // listBox5
+            // pictureBox2
             // 
-            listBox5.FormattingEnabled = true;
-            listBox5.Location = new Point(3, 66);
-            listBox5.Name = "listBox5";
-            listBox5.Size = new Size(144, 199);
-            listBox5.TabIndex = 6;
+            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox2.Location = new Point(190, 21);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(200, 274);
+            pictureBox2.TabIndex = 23;
+            pictureBox2.TabStop = false;
             // 
-            // label13
+            // label5
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(3, 48);
-            label13.Name = "label13";
-            label13.Size = new Size(144, 15);
-            label13.TabIndex = 7;
-            label13.Text = "Section Objects in Section";
+            label5.AutoSize = true;
+            label5.Location = new Point(190, 3);
+            label5.Name = "label5";
+            label5.Size = new Size(48, 15);
+            label5.TabIndex = 22;
+            label5.Text = "Preview";
             // 
-            // button13
+            // button7
             // 
-            button13.Location = new Point(153, 123);
-            button13.Name = "button13";
-            button13.Size = new Size(75, 23);
-            button13.TabIndex = 8;
-            button13.Text = ">";
-            button13.UseVisualStyleBackColor = true;
+            button7.Dock = DockStyle.Bottom;
+            button7.Location = new Point(0, 403);
+            button7.Name = "button7";
+            button7.Size = new Size(543, 23);
+            button7.TabIndex = 19;
+            button7.Text = "Save Changes";
+            button7.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // button8
             // 
-            button14.Location = new Point(153, 152);
-            button14.Name = "button14";
-            button14.Size = new Size(75, 23);
-            button14.TabIndex = 9;
-            button14.Text = "<";
-            button14.UseVisualStyleBackColor = true;
-            // 
-            // listBox6
-            // 
-            listBox6.FormattingEnabled = true;
-            listBox6.Location = new Point(234, 66);
-            listBox6.Name = "listBox6";
-            listBox6.Size = new Size(144, 199);
-            listBox6.TabIndex = 10;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(234, 48);
-            label14.Name = "label14";
-            label14.Size = new Size(167, 15);
-            label14.TabIndex = 11;
-            label14.Text = "Section Objects Not In Section";
-            // 
-            // button15
-            // 
-            button15.Location = new Point(3, 271);
-            button15.Name = "button15";
-            button15.Size = new Size(75, 23);
-            button15.TabIndex = 12;
-            button15.Text = "UP";
-            button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            button16.Location = new Point(3, 299);
-            button16.Name = "button16";
-            button16.Size = new Size(75, 23);
-            button16.TabIndex = 13;
-            button16.Text = "DOWN";
-            button16.UseVisualStyleBackColor = true;
-            // 
-            // listBox7
-            // 
-            listBox7.FormattingEnabled = true;
-            listBox7.Location = new Point(321, 63);
-            listBox7.Name = "listBox7";
-            listBox7.Size = new Size(150, 229);
-            listBox7.TabIndex = 12;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(321, 45);
-            label15.Name = "label15";
-            label15.Size = new Size(132, 15);
-            label15.TabIndex = 13;
-            label15.Text = "Sections Not In Resume";
+            button8.Location = new Point(2, 309);
+            button8.Name = "button8";
+            button8.Size = new Size(144, 23);
+            button8.TabIndex = 14;
+            button8.Text = "Add Section";
+            button8.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1725, 556);
+            ClientSize = new Size(1725, 838);
             Controls.Add(tabControl1);
             Name = "Form1";
             Text = "Form1";
             tabControl1.ResumeLayout(false);
-            ResumesOverviewTabPage.ResumeLayout(false);
-            ResumesOverviewTabPage.PerformLayout();
-            SectionsOverviewTabPage.ResumeLayout(false);
-            SectionsOverviewTabPage.PerformLayout();
-            SectionObjectsOverviewTabPage.ResumeLayout(false);
+            HomeTabPage.ResumeLayout(false);
+            HomeTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            this.SectionOverviewTabPage.ResumeLayout(false);
+            this.SectionOverviewTabPage.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            EntryOverviewTabPage.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private TabControl tabControl1;
-        private TabPage ResumesOverviewTabPage;
+        private TabPage HomeTabPage;
         private TabPage SectionsOverviewTabPage;
-        private TabPage SectionObjectsOverviewTabPage;
+        private TabPage EntryOverviewTabPage;
         private Button button2;
         private Button button1;
         private TextBox textBox1;
@@ -706,20 +709,14 @@
         private ListBox listBox1;
         private Button button4;
         private Button button3;
-        private ListBox listBox2;
+        private ListBox SectionListBox;
+        private ListBox SelectedItemsListBox;
         private Label label3;
-        private Label label5;
-        private Button button6;
-        private Button button5;
-        private ListBox listBox3;
         private PictureBox pictureBox1;
         private Label label4;
-        private Panel panel3;
         private Panel panel1;
         private ListBox listBox4;
         private Label label6;
-        private Button button8;
-        private Button button7;
         private Button button10;
         private Button button9;
         private Button button11;
@@ -750,8 +747,16 @@
         private Label label7;
         private TextBox textBox2;
         private Label label15;
-        private ListBox listBox7;
+        private ListBox ItemsNotSelectedListBox;
         private Button button16;
         private Button button15;
+        private ListBox listBox2;
+        private Button RecompilePreviewButton;
+        private Button button5;
+        private Button button6;
+        private PictureBox pictureBox2;
+        private Label label5;
+        private Button button7;
+        private Button button8;
     }
 }
