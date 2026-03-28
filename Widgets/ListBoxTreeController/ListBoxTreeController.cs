@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ResumeBuilder.Widgets
 {
-    internal class TreeController(ListBox listBox, int[] order, Resume resume)
+    internal class ListBoxTreeController(ListBox listBox, int[] order, Resume resume)
     {
         ListBox _listBox = listBox;
         int[] _order = order;
