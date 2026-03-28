@@ -71,14 +71,11 @@
             panel2 = new Panel();
             button7 = new Button();
             label12 = new Label();
-            richTextBox1 = new RichTextBox();
             checkBox3 = new CheckBox();
             textBox4 = new TextBox();
             label11 = new Label();
             textBox3 = new TextBox();
             label10 = new Label();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
             dateTimePicker2 = new DateTimePicker();
             label9 = new Label();
             label8 = new Label();
@@ -104,6 +101,11 @@
             button6 = new Button();
             pictureBox2 = new PictureBox();
             label5 = new Label();
+            groupBox1 = new GroupBox();
+            checkBox1 = new CheckBox();
+            button25 = new Button();
+            panel5 = new Panel();
+            richTextBox1 = new RichTextBox();
             tabControl1.SuspendLayout();
             HomeTabPage.SuspendLayout();
             panel1.SuspendLayout();
@@ -115,6 +117,8 @@
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            groupBox1.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -500,6 +504,7 @@
             // EntryOverviewTabPage
             // 
             EntryOverviewTabPage.Controls.Add(panel2);
+            EntryOverviewTabPage.Controls.Add(textBox2);
             EntryOverviewTabPage.Location = new Point(4, 24);
             EntryOverviewTabPage.Name = "EntryOverviewTabPage";
             EntryOverviewTabPage.Size = new Size(1530, 716);
@@ -510,31 +515,30 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(richTextBox1);
+            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(groupBox1);
             panel2.Controls.Add(button7);
             panel2.Controls.Add(label12);
-            panel2.Controls.Add(richTextBox1);
             panel2.Controls.Add(checkBox3);
             panel2.Controls.Add(textBox4);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(label10);
-            panel2.Controls.Add(checkBox2);
-            panel2.Controls.Add(checkBox1);
             panel2.Controls.Add(dateTimePicker2);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox2);
             panel2.Location = new Point(25, 22);
             panel2.Name = "panel2";
-            panel2.Size = new Size(754, 428);
+            panel2.Size = new Size(754, 527);
             panel2.TabIndex = 7;
             // 
             // button7
             // 
             button7.Dock = DockStyle.Bottom;
-            button7.Location = new Point(0, 403);
+            button7.Location = new Point(0, 502);
             button7.Name = "button7";
             button7.Size = new Size(752, 23);
             button7.TabIndex = 19;
@@ -549,14 +553,6 @@
             label12.Size = new Size(34, 15);
             label12.TabIndex = 18;
             label12.Text = "Body";
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(3, 242);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(337, 156);
-            richTextBox1.TabIndex = 17;
-            richTextBox1.Text = "";
             // 
             // checkBox3
             // 
@@ -602,26 +598,6 @@
             label10.TabIndex = 12;
             label10.Text = "Organization";
             // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(231, 88);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(120, 19);
-            checkBox2.TabIndex = 11;
-            checkBox2.Text = "Has No End Date?";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(231, 66);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(109, 19);
-            checkBox1.TabIndex = 10;
-            checkBox1.Text = "Receiving Date?";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // dateTimePicker2
             // 
             dateTimePicker2.Location = new Point(3, 110);
@@ -665,7 +641,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(3, 22);
+            textBox2.Location = new Point(-53, 104);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(200, 23);
             textBox2.TabIndex = 4;
@@ -846,6 +822,52 @@
             label5.TabIndex = 22;
             label5.Text = "Preview";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Location = new Point(310, 33);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(246, 144);
+            groupBox1.TabIndex = 20;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Options";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(6, 30);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(82, 19);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button25
+            // 
+            button25.Location = new Point(3, 3);
+            button25.Name = "button25";
+            button25.Size = new Size(151, 23);
+            button25.TabIndex = 21;
+            button25.Text = "Add Bullet Point";
+            button25.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(button25);
+            panel5.Location = new Point(316, 233);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(198, 254);
+            panel5.TabIndex = 22;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(3, 242);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(200, 245);
+            richTextBox1.TabIndex = 23;
+            richTextBox1.Text = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -866,11 +888,15 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             EntryOverviewTabPage.ResumeLayout(false);
+            EntryOverviewTabPage.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -910,14 +936,11 @@
         private TextBox textBox7;
         private Panel panel2;
         private Label label12;
-        private RichTextBox richTextBox1;
         private CheckBox checkBox3;
         private TextBox textBox4;
         private Label label11;
         private TextBox textBox3;
         private Label label10;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
         private DateTimePicker dateTimePicker2;
         private Label label9;
         private Label label8;
@@ -953,5 +976,10 @@
         private Button button17;
         private TextBox textBox5;
         private Label label19;
+        private GroupBox groupBox1;
+        private CheckBox checkBox1;
+        private Button button25;
+        private Panel panel5;
+        private RichTextBox richTextBox1;
     }
 }
