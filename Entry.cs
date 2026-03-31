@@ -13,6 +13,7 @@ namespace ResumeBuilder
         public bool IsReceivingDate { get; set; }
         public bool HasNoEndDate { get; set; }
         public string? Organization { get; set; } = organization;
+        public bool HasOrganization { get; set; }
         public string? Address { get; set; } = address;
         public bool HasAddress { get; set; }
         public string Body { get; set; } = body;

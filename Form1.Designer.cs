@@ -70,10 +70,12 @@
             EntryOverviewTabPage = new TabPage();
             panel2 = new Panel();
             richTextBox1 = new RichTextBox();
+            textBox2 = new TextBox();
             panel5 = new Panel();
             button25 = new Button();
             groupBox1 = new GroupBox();
-            checkBox1 = new CheckBox();
+            hasNoDateCheckBox = new CheckBox();
+            hasOneDateCheckBox = new CheckBox();
             button7 = new Button();
             label12 = new Label();
             checkBox3 = new CheckBox();
@@ -86,7 +88,6 @@
             label8 = new Label();
             dateTimePicker1 = new DateTimePicker();
             label7 = new Label();
-            textBox2 = new TextBox();
             panel4 = new Panel();
             button8 = new Button();
             button16 = new Button();
@@ -106,6 +107,7 @@
             button6 = new Button();
             pictureBox2 = new PictureBox();
             label5 = new Label();
+            hasOrganizationCheckBox = new CheckBox();
             tabControl1.SuspendLayout();
             HomeTabPage.SuspendLayout();
             panel1.SuspendLayout();
@@ -505,7 +507,6 @@
             // EntryOverviewTabPage
             // 
             EntryOverviewTabPage.Controls.Add(panel2);
-            EntryOverviewTabPage.Controls.Add(textBox2);
             EntryOverviewTabPage.Location = new Point(4, 24);
             EntryOverviewTabPage.Name = "EntryOverviewTabPage";
             EntryOverviewTabPage.Size = new Size(1530, 716);
@@ -516,7 +517,9 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(hasOrganizationCheckBox);
             panel2.Controls.Add(richTextBox1);
+            panel2.Controls.Add(textBox2);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(groupBox1);
             panel2.Controls.Add(button7);
@@ -544,6 +547,13 @@
             richTextBox1.TabIndex = 23;
             richTextBox1.Text = "";
             // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(3, 22);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(200, 23);
+            textBox2.TabIndex = 4;
+            // 
             // panel5
             // 
             panel5.BorderStyle = BorderStyle.FixedSingle;
@@ -564,23 +574,34 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Location = new Point(310, 33);
+            groupBox1.Controls.Add(hasNoDateCheckBox);
+            groupBox1.Controls.Add(hasOneDateCheckBox);
+            groupBox1.Location = new Point(209, 48);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(246, 144);
+            groupBox1.Size = new Size(142, 85);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Options";
             // 
-            // checkBox1
+            // hasNoDateCheckBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 30);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(82, 19);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
+            hasNoDateCheckBox.AutoSize = true;
+            hasNoDateCheckBox.Location = new Point(6, 48);
+            hasNoDateCheckBox.Name = "hasNoDateCheckBox";
+            hasNoDateCheckBox.Size = new Size(94, 19);
+            hasNoDateCheckBox.TabIndex = 1;
+            hasNoDateCheckBox.Text = "Has no date?";
+            hasNoDateCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // hasOneDateCheckBox
+            // 
+            hasOneDateCheckBox.AutoSize = true;
+            hasOneDateCheckBox.Location = new Point(6, 22);
+            hasOneDateCheckBox.Name = "hasOneDateCheckBox";
+            hasOneDateCheckBox.Size = new Size(126, 19);
+            hasOneDateCheckBox.TabIndex = 0;
+            hasOneDateCheckBox.Text = "Only has one date?";
+            hasOneDateCheckBox.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -685,13 +706,6 @@
             label7.Size = new Size(60, 15);
             label7.TabIndex = 5;
             label7.Text = "Entry Title";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(-53, 104);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(200, 23);
-            textBox2.TabIndex = 4;
             // 
             // panel4
             // 
@@ -869,6 +883,18 @@
             label5.TabIndex = 22;
             label5.Text = "Preview";
             // 
+            // hasOrganizationCheckBox
+            // 
+            hasOrganizationCheckBox.AutoSize = true;
+            hasOrganizationCheckBox.Checked = true;
+            hasOrganizationCheckBox.CheckState = CheckState.Checked;
+            hasOrganizationCheckBox.Location = new Point(109, 158);
+            hasOrganizationCheckBox.Name = "hasOrganizationCheckBox";
+            hasOrganizationCheckBox.Size = new Size(122, 19);
+            hasOrganizationCheckBox.TabIndex = 24;
+            hasOrganizationCheckBox.Text = "Has Organization?";
+            hasOrganizationCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -889,7 +915,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             EntryOverviewTabPage.ResumeLayout(false);
-            EntryOverviewTabPage.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel5.ResumeLayout(false);
@@ -978,9 +1003,11 @@
         private TextBox textBox5;
         private Label label19;
         private GroupBox groupBox1;
-        private CheckBox checkBox1;
+        private CheckBox hasOneDateCheckBox;
         private Button button25;
         private Panel panel5;
         private RichTextBox richTextBox1;
+        private CheckBox hasNoDateCheckBox;
+        private CheckBox hasOrganizationCheckBox;
     }
 }
