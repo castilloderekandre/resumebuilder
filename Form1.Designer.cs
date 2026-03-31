@@ -69,6 +69,11 @@
             listBox1 = new ListBox();
             EntryOverviewTabPage = new TabPage();
             panel2 = new Panel();
+            richTextBox1 = new RichTextBox();
+            panel5 = new Panel();
+            button25 = new Button();
+            groupBox1 = new GroupBox();
+            checkBox1 = new CheckBox();
             button7 = new Button();
             label12 = new Label();
             checkBox3 = new CheckBox();
@@ -101,11 +106,6 @@
             button6 = new Button();
             pictureBox2 = new PictureBox();
             label5 = new Label();
-            groupBox1 = new GroupBox();
-            checkBox1 = new CheckBox();
-            button25 = new Button();
-            panel5 = new Panel();
-            richTextBox1 = new RichTextBox();
             tabControl1.SuspendLayout();
             HomeTabPage.SuspendLayout();
             panel1.SuspendLayout();
@@ -115,10 +115,10 @@
             panel3.SuspendLayout();
             EntryOverviewTabPage.SuspendLayout();
             panel2.SuspendLayout();
+            panel5.SuspendLayout();
+            groupBox1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            groupBox1.SuspendLayout();
-            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -251,6 +251,7 @@
             // SelectedItemsListBox
             // 
             SelectedItemsListBox.FormattingEnabled = true;
+            SelectedItemsListBox.Items.AddRange(new object[] { "Section", "- a", "- b", "- c" });
             SelectedItemsListBox.Location = new Point(84, 64);
             SelectedItemsListBox.Name = "SelectedItemsListBox";
             SelectedItemsListBox.Size = new Size(150, 229);
@@ -534,6 +535,52 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(754, 527);
             panel2.TabIndex = 7;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(3, 242);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(200, 245);
+            richTextBox1.TabIndex = 23;
+            richTextBox1.Text = "";
+            // 
+            // panel5
+            // 
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(button25);
+            panel5.Location = new Point(316, 233);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(198, 254);
+            panel5.TabIndex = 22;
+            // 
+            // button25
+            // 
+            button25.Location = new Point(3, 3);
+            button25.Name = "button25";
+            button25.Size = new Size(151, 23);
+            button25.TabIndex = 21;
+            button25.Text = "Add Bullet Point";
+            button25.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Location = new Point(310, 33);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(246, 144);
+            groupBox1.TabIndex = 20;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Options";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(6, 30);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(82, 19);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -822,52 +869,6 @@
             label5.TabIndex = 22;
             label5.Text = "Preview";
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Location = new Point(310, 33);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(246, 144);
-            groupBox1.TabIndex = 20;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Options";
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 30);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(82, 19);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            button25.Location = new Point(3, 3);
-            button25.Name = "button25";
-            button25.Size = new Size(151, 23);
-            button25.TabIndex = 21;
-            button25.Text = "Add Bullet Point";
-            button25.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(button25);
-            panel5.Location = new Point(316, 233);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(198, 254);
-            panel5.TabIndex = 22;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(3, 242);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(200, 245);
-            richTextBox1.TabIndex = 23;
-            richTextBox1.Text = "";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -891,12 +892,12 @@
             EntryOverviewTabPage.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel5.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
