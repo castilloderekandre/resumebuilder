@@ -5,10 +5,10 @@ using System.Text;
 
 namespace ResumeBuilder.Widgets.ListBoxItemPicker
 {
-    internal class ItemPickerController(ListBoxTreeController sourceTreeController, ListBoxTreeController destinationTreeController)
+    internal class ItemPickerController(TreeController sourceTreeController, TreeController destinationTreeController)
     {
-        ListBoxTreeController _sourceTreeController = sourceTreeController;
-        ListBoxTreeController _destinationTreeController = destinationTreeController;
+        TreeController _sourceTreeController = sourceTreeController;
+        TreeController _destinationTreeController = destinationTreeController;
         List<object> _destinationCollection = [];
 
         void MoveItemIn(object item)
