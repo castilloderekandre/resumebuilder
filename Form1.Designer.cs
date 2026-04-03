@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             tabControl1 = new TabControl();
-            HomeTabPage = new TabPage();
-            RecompilePreviewButton = new Button();
-            panel1 = new Panel();
-            button5 = new Button();
-            label15 = new Label();
-            ItemsNotSelectedListBox = new ListBox();
-            button10 = new Button();
-            button9 = new Button();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            SelectedItemsListBox = new ListBox();
-            button3 = new Button();
-            button4 = new Button();
-            pictureBox1 = new PictureBox();
-            label4 = new Label();
-            listBox2 = new ListBox();
-            button2 = new Button();
-            button1 = new Button();
-            label1 = new Label();
+            homeTabPage = new TabPage();
+            button26 = new Button();
+            panel6 = new Panel();
+            button27 = new Button();
+            label20 = new Label();
+            listBox8 = new ListBox();
+            button28 = new Button();
+            button29 = new Button();
+            label21 = new Label();
+            textBox6 = new TextBox();
+            label22 = new Label();
+            listBox9 = new ListBox();
+            button30 = new Button();
+            button31 = new Button();
+            pictureBox4 = new PictureBox();
+            label23 = new Label();
+            listBox10 = new ListBox();
+            button32 = new Button();
+            button33 = new Button();
+            label24 = new Label();
             SectionOverviewTabPage = new TabPage();
             button24 = new Button();
             button23 = new Button();
@@ -69,6 +69,7 @@
             listBox1 = new ListBox();
             EntryOverviewTabPage = new TabPage();
             panel2 = new Panel();
+            hasOrganizationCheckBox = new CheckBox();
             richTextBox1 = new RichTextBox();
             textBox2 = new TextBox();
             panel5 = new Panel();
@@ -107,11 +108,10 @@
             button6 = new Button();
             pictureBox2 = new PictureBox();
             label5 = new Label();
-            hasOrganizationCheckBox = new CheckBox();
             tabControl1.SuspendLayout();
-            HomeTabPage.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            homeTabPage.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SectionOverviewTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
@@ -125,7 +125,7 @@
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(HomeTabPage);
+            tabControl1.Controls.Add(homeTabPage);
             tabControl1.Controls.Add(SectionOverviewTabPage);
             tabControl1.Controls.Add(EntryOverviewTabPage);
             tabControl1.Location = new Point(12, 12);
@@ -134,201 +134,200 @@
             tabControl1.Size = new Size(1538, 744);
             tabControl1.TabIndex = 1;
             // 
-            // HomeTabPage
+            // homeTabPage
             // 
-            HomeTabPage.Controls.Add(RecompilePreviewButton);
-            HomeTabPage.Controls.Add(panel1);
-            HomeTabPage.Controls.Add(pictureBox1);
-            HomeTabPage.Controls.Add(label4);
-            HomeTabPage.Controls.Add(listBox2);
-            HomeTabPage.Controls.Add(button2);
-            HomeTabPage.Controls.Add(button1);
-            HomeTabPage.Controls.Add(label1);
-            HomeTabPage.Location = new Point(4, 24);
-            HomeTabPage.Name = "HomeTabPage";
-            HomeTabPage.Padding = new Padding(3);
-            HomeTabPage.Size = new Size(1530, 716);
-            HomeTabPage.TabIndex = 0;
-            HomeTabPage.Text = "Home";
-            HomeTabPage.UseVisualStyleBackColor = true;
+            homeTabPage.Controls.Add(button26);
+            homeTabPage.Controls.Add(panel6);
+            homeTabPage.Controls.Add(pictureBox4);
+            homeTabPage.Controls.Add(label23);
+            homeTabPage.Controls.Add(listBox10);
+            homeTabPage.Controls.Add(button32);
+            homeTabPage.Controls.Add(button33);
+            homeTabPage.Controls.Add(label24);
+            homeTabPage.Location = new Point(4, 24);
+            homeTabPage.Name = "homeTabPage";
+            homeTabPage.Size = new Size(1530, 716);
+            homeTabPage.TabIndex = 4;
+            homeTabPage.Text = "HomeTabPage";
+            homeTabPage.UseVisualStyleBackColor = true;
             // 
-            // RecompilePreviewButton
+            // button26
             // 
-            RecompilePreviewButton.Location = new Point(190, 301);
-            RecompilePreviewButton.Name = "RecompilePreviewButton";
-            RecompilePreviewButton.Size = new Size(200, 23);
-            RecompilePreviewButton.TabIndex = 21;
-            RecompilePreviewButton.Text = "Recompile";
-            RecompilePreviewButton.UseVisualStyleBackColor = true;
+            button26.Location = new Point(690, 616);
+            button26.Name = "button26";
+            button26.Size = new Size(200, 23);
+            button26.TabIndex = 29;
+            button26.Text = "Recompile";
+            button26.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panel6
             // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(label15);
-            panel1.Controls.Add(ItemsNotSelectedListBox);
-            panel1.Controls.Add(button10);
-            panel1.Controls.Add(button9);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(SelectedItemsListBox);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button4);
-            panel1.Location = new Point(396, 21);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(557, 346);
-            panel1.TabIndex = 16;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(button27);
+            panel6.Controls.Add(label20);
+            panel6.Controls.Add(listBox8);
+            panel6.Controls.Add(button28);
+            panel6.Controls.Add(button29);
+            panel6.Controls.Add(label21);
+            panel6.Controls.Add(textBox6);
+            panel6.Controls.Add(label22);
+            panel6.Controls.Add(listBox9);
+            panel6.Controls.Add(button30);
+            panel6.Controls.Add(button31);
+            panel6.Location = new Point(896, 336);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(557, 346);
+            panel6.TabIndex = 27;
             // 
-            // button5
+            // button27
             // 
-            button5.Dock = DockStyle.Bottom;
-            button5.Location = new Point(0, 321);
-            button5.Name = "button5";
-            button5.Size = new Size(555, 23);
-            button5.TabIndex = 14;
-            button5.Text = "Save Changes";
-            button5.UseVisualStyleBackColor = true;
+            button27.Dock = DockStyle.Bottom;
+            button27.Location = new Point(0, 321);
+            button27.Name = "button27";
+            button27.Size = new Size(555, 23);
+            button27.TabIndex = 14;
+            button27.Text = "Save Changes";
+            button27.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // label20
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(321, 45);
-            label15.Name = "label15";
-            label15.Size = new Size(106, 15);
-            label15.TabIndex = 13;
-            label15.Text = "Items Not Selected";
+            label20.AutoSize = true;
+            label20.Location = new Point(321, 45);
+            label20.Name = "label20";
+            label20.Size = new Size(106, 15);
+            label20.TabIndex = 13;
+            label20.Text = "Items Not Selected";
             // 
-            // ItemsNotSelectedListBox
+            // listBox8
             // 
-            ItemsNotSelectedListBox.FormattingEnabled = true;
-            ItemsNotSelectedListBox.Location = new Point(321, 63);
-            ItemsNotSelectedListBox.Name = "ItemsNotSelectedListBox";
-            ItemsNotSelectedListBox.Size = new Size(150, 229);
-            ItemsNotSelectedListBox.TabIndex = 12;
+            listBox8.FormattingEnabled = true;
+            listBox8.Location = new Point(321, 63);
+            listBox8.Name = "listBox8";
+            listBox8.Size = new Size(150, 229);
+            listBox8.TabIndex = 12;
             // 
-            // button10
+            // button28
             // 
-            button10.Location = new Point(240, 93);
-            button10.Name = "button10";
-            button10.Size = new Size(75, 23);
-            button10.TabIndex = 11;
-            button10.Text = ">";
-            button10.UseVisualStyleBackColor = true;
+            button28.Location = new Point(240, 93);
+            button28.Name = "button28";
+            button28.Size = new Size(75, 23);
+            button28.TabIndex = 11;
+            button28.Text = ">";
+            button28.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // button29
             // 
-            button9.Location = new Point(240, 64);
-            button9.Name = "button9";
-            button9.Size = new Size(75, 23);
-            button9.TabIndex = 10;
-            button9.Text = "<";
-            button9.UseVisualStyleBackColor = true;
+            button29.Location = new Point(240, 64);
+            button29.Name = "button29";
+            button29.Size = new Size(75, 23);
+            button29.TabIndex = 10;
+            button29.Text = "<";
+            button29.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // label21
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(84, 2);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Resume Title";
+            label21.AutoSize = true;
+            label21.Location = new Point(84, 2);
+            label21.Name = "label21";
+            label21.Size = new Size(75, 15);
+            label21.TabIndex = 2;
+            label21.Text = "Resume Title";
             // 
-            // textBox1
+            // textBox6
             // 
-            textBox1.Location = new Point(84, 20);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 23);
-            textBox1.TabIndex = 3;
+            textBox6.Location = new Point(84, 20);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(150, 23);
+            textBox6.TabIndex = 3;
             // 
-            // label3
+            // label22
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(84, 46);
-            label3.Name = "label3";
-            label3.Size = new Size(139, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Selected Items and Order";
+            label22.AutoSize = true;
+            label22.Location = new Point(84, 46);
+            label22.Name = "label22";
+            label22.Size = new Size(139, 15);
+            label22.TabIndex = 6;
+            label22.Text = "Selected Items and Order";
             // 
-            // SelectedItemsListBox
+            // listBox9
             // 
-            SelectedItemsListBox.FormattingEnabled = true;
-            SelectedItemsListBox.Items.AddRange(new object[] { "Section", "- a", "- b", "- c" });
-            SelectedItemsListBox.Location = new Point(84, 64);
-            SelectedItemsListBox.Name = "SelectedItemsListBox";
-            SelectedItemsListBox.Size = new Size(150, 229);
-            SelectedItemsListBox.TabIndex = 7;
+            listBox9.FormattingEnabled = true;
+            listBox9.Items.AddRange(new object[] { "Section", "- a", "- b", "- c" });
+            listBox9.Location = new Point(84, 64);
+            listBox9.Name = "listBox9";
+            listBox9.Size = new Size(150, 229);
+            listBox9.TabIndex = 7;
             // 
-            // button3
+            // button30
             // 
-            button3.Location = new Point(3, 63);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 8;
-            button3.Text = "UP";
-            button3.UseVisualStyleBackColor = true;
+            button30.Location = new Point(3, 63);
+            button30.Name = "button30";
+            button30.Size = new Size(75, 23);
+            button30.TabIndex = 8;
+            button30.Text = "UP";
+            button30.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button31
             // 
-            button4.Location = new Point(3, 92);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 9;
-            button4.Text = "DOWN";
-            button4.UseVisualStyleBackColor = true;
+            button31.Location = new Point(3, 92);
+            button31.Name = "button31";
+            button31.Size = new Size(75, 23);
+            button31.TabIndex = 9;
+            button31.Text = "DOWN";
+            button31.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pictureBox4
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(190, 21);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 274);
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
+            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox4.Location = new Point(690, 336);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(200, 274);
+            pictureBox4.TabIndex = 26;
+            pictureBox4.TabStop = false;
             // 
-            // label4
+            // label23
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(190, 3);
-            label4.Name = "label4";
-            label4.Size = new Size(48, 15);
-            label4.TabIndex = 10;
-            label4.Text = "Preview";
+            label23.AutoSize = true;
+            label23.Location = new Point(690, 318);
+            label23.Name = "label23";
+            label23.Size = new Size(48, 15);
+            label23.TabIndex = 25;
+            label23.Text = "Preview";
             // 
-            // listBox2
+            // listBox10
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(6, 21);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(178, 274);
-            listBox2.TabIndex = 20;
+            listBox10.FormattingEnabled = true;
+            listBox10.Location = new Point(506, 336);
+            listBox10.Name = "listBox10";
+            listBox10.Size = new Size(178, 274);
+            listBox10.TabIndex = 28;
             // 
-            // button2
+            // button32
             // 
-            button2.Location = new Point(109, 301);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 5;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
+            button32.Location = new Point(609, 616);
+            button32.Name = "button32";
+            button32.Size = new Size(75, 23);
+            button32.TabIndex = 24;
+            button32.Text = "Delete";
+            button32.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button33
             // 
-            button1.Location = new Point(6, 303);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            button33.Location = new Point(506, 618);
+            button33.Name = "button33";
+            button33.Size = new Size(75, 23);
+            button33.TabIndex = 23;
+            button33.Text = "Add";
+            button33.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label24
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Resumes";
+            label24.AutoSize = true;
+            label24.Location = new Point(506, 318);
+            label24.Name = "label24";
+            label24.Size = new Size(54, 15);
+            label24.TabIndex = 22;
+            label24.Text = "Resumes";
             // 
             // SectionOverviewTabPage
             // 
@@ -538,6 +537,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(754, 527);
             panel2.TabIndex = 7;
+            // 
+            // hasOrganizationCheckBox
+            // 
+            hasOrganizationCheckBox.AutoSize = true;
+            hasOrganizationCheckBox.Checked = true;
+            hasOrganizationCheckBox.CheckState = CheckState.Checked;
+            hasOrganizationCheckBox.Location = new Point(109, 158);
+            hasOrganizationCheckBox.Name = "hasOrganizationCheckBox";
+            hasOrganizationCheckBox.Size = new Size(122, 19);
+            hasOrganizationCheckBox.TabIndex = 24;
+            hasOrganizationCheckBox.Text = "Has Organization?";
+            hasOrganizationCheckBox.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
@@ -883,18 +894,6 @@
             label5.TabIndex = 22;
             label5.Text = "Preview";
             // 
-            // hasOrganizationCheckBox
-            // 
-            hasOrganizationCheckBox.AutoSize = true;
-            hasOrganizationCheckBox.Checked = true;
-            hasOrganizationCheckBox.CheckState = CheckState.Checked;
-            hasOrganizationCheckBox.Location = new Point(109, 158);
-            hasOrganizationCheckBox.Name = "hasOrganizationCheckBox";
-            hasOrganizationCheckBox.Size = new Size(122, 19);
-            hasOrganizationCheckBox.TabIndex = 24;
-            hasOrganizationCheckBox.Text = "Has Organization?";
-            hasOrganizationCheckBox.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -904,11 +903,11 @@
             Name = "Form1";
             Text = "Form1";
             tabControl1.ResumeLayout(false);
-            HomeTabPage.ResumeLayout(false);
-            HomeTabPage.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            homeTabPage.ResumeLayout(false);
+            homeTabPage.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             SectionOverviewTabPage.ResumeLayout(false);
             SectionOverviewTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -1009,5 +1008,25 @@
         private RichTextBox richTextBox1;
         private CheckBox hasNoDateCheckBox;
         private CheckBox hasOrganizationCheckBox;
+        private TabPage homeTabPage;
+        private Button button26;
+        private Panel panel6;
+        private Button button27;
+        private Label label20;
+        private ListBox listBox8;
+        private Button button28;
+        private Button button29;
+        private Label label21;
+        private TextBox textBox6;
+        private Label label22;
+        private ListBox listBox9;
+        private Button button30;
+        private Button button31;
+        private PictureBox pictureBox4;
+        private Label label23;
+        private ListBox listBox10;
+        private Button button32;
+        private Button button33;
+        private Label label24;
     }
 }

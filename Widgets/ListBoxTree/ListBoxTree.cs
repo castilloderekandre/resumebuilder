@@ -4,18 +4,19 @@ using System.Text;
 
 namespace ResumeBuilder.Widgets.ListBoxTree
 {
-    internal class ListBoxTree
+    internal class ListBoxTree : Control
     {
         // #####
         // GUI
         Label listBoxTitleLabel = new()
         {
-            Location = new Point(120, 3),
+            Location = new Point(81, 3),
+            AutoSize = true,
         };
         ListBox listBox = new()
         {
-            Location = new Point(120, 21),
-            Size = new Size(120, 199),
+            Location = new Point(81, 21),
+            Size = new Size(200, 199),
         };
         Button upButton = new()
         {
@@ -33,13 +34,19 @@ namespace ResumeBuilder.Widgets.ListBoxTree
 
         TreeController treeController;
 
-        private ListBoxTree(string listBoxTitle, LinkedList<object> tree)
+        public ListBoxTree(string listBoxTitle, LinkedList<object> tree)
         {
+            Size = new Size(300, 250);
             listBoxTitleLabel.Text = listBoxTitle;
             treeController = new(listBox, tree);
 
             upButton.Click += upButton_Click;
             downButton.Click += downButton_Click;
+
+            Controls.Add(listBoxTitleLabel);
+            Controls.Add(listBox);
+            Controls.Add(upButton);
+            Controls.Add(downButton);
         }
 
         void upButton_Click(object? sender, EventArgs e)

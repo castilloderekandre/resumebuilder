@@ -7,5 +7,8 @@
     <Compile Update="Widgets\ListBoxItemPicker\ListBoxItemPicker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Widgets\ListBoxTree\ListBoxTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

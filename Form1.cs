@@ -1,3 +1,4 @@
+using ResumeBuilder.Widgets.ListBoxTree;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -9,6 +10,7 @@ namespace ResumeBuilder
         {
             InitializeComponent();
             TestEntryObject();
+            homeTabPage.Controls.Add(new ListBoxTree("Title test", new LinkedList<object>()));
         }
 
         public void TestEntryObject()
