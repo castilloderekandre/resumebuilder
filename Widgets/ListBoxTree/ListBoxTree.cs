@@ -47,6 +47,8 @@ namespace ResumeBuilder.Widgets.ListBoxTree
             Controls.Add(listBox);
             Controls.Add(upButton);
             Controls.Add(downButton);
+
+            DisplayItems([.. tree]);
         }
 
         void upButton_Click(object? sender, EventArgs e)
@@ -57,6 +59,11 @@ namespace ResumeBuilder.Widgets.ListBoxTree
         void downButton_Click(object? sender, EventArgs e)
         {
             treeController.MoveSelectedItemDown();
+        }
+
+        void DisplayItems(object[] items)
+        {
+            listBox.Items.AddRange(items);
         }
     }
 }
