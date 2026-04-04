@@ -105,5 +105,10 @@ namespace ResumeBuilder.Widgets
         {
             _listBox.Items.Remove(item); 
         }
+
+        public void ClearItems()
+        {
+            _listBox.Items.Clear();
+        }
     }
 }
