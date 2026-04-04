@@ -10,10 +10,22 @@ namespace ResumeBuilder
         {
             InitializeComponent();
             TestEntryObject();
-            LinkedList<object> testData = new();
-            testData.AddFirst("section");
-            testData.AddLast("entry");
-            homeTabPage.Controls.Add(new ListBoxTree("Title test", testData));
+            homeTabPage.Controls.Add(
+                new ListBoxTree( 
+                    "Title test", 
+                    new LinkedList<object>(
+                        [
+                            "section1", 
+                            "entry1",
+                            "entry2",
+                            "section2", 
+                            "entry1",
+                            "entry2",
+                            "entry3"
+                        ]
+                    ) 
+                )
+            );
         }
 
         public void TestEntryObject()

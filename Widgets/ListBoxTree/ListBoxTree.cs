@@ -65,5 +65,10 @@ namespace ResumeBuilder.Widgets.ListBoxTree
         {
             listBox.Items.AddRange(items);
         }
+
+        public void ClearListBox()
+        {
+            treeController.ClearItems();
+        }
     }
 }

@@ -72,11 +72,12 @@ namespace ResumeBuilder.Widgets
                 return;
 
             //When an item is removed is it disposed too or left for garbage collection?
-            _listBox.Items.Remove(item);
+            _listBox.Items.RemoveAt(index);
 
             index = --index < 0 ? 
-                _listBox.Items.Count - 1 : index;
+                _listBox.Items.Count : index;
             _listBox.Items.Insert(index, item);
+            _listBox.SelectedItem = item;
         }
 
         public void MoveSelectedItemDown()
@@ -87,11 +88,12 @@ namespace ResumeBuilder.Widgets
             if (item is null)
                 return;
 
-            _listBox.Items.Remove(item);
+            _listBox.Items.RemoveAt(index);
 
-            index = ++index >= _listBox.Items.Count ? 
+            index = ++index >= _listBox.Items.Count + 1 ? 
                 0 : index;
             _listBox.Items.Insert(index, item);
+            _listBox.SelectedItem = item;
         }
 
         public void AddItem(object item)
