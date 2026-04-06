@@ -1,4 +1,5 @@
 using ResumeBuilder.Widgets.ListBoxTree;
+using ResumeBuilder.EntryController;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -9,6 +10,7 @@ namespace ResumeBuilder
         public Form1()
         {
             InitializeComponent();
+
             TestEntryObject();
             Button resetButton = new Button()
             {
@@ -34,6 +36,9 @@ namespace ResumeBuilder
                     ) 
                 )
             );
+
+            EntryController.EntryController entryController = new();
+            EntryOverviewTabPage.Controls.Add(entryController);
         }
 
         public void TestEntryObject()

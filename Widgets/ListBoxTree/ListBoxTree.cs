@@ -43,10 +43,12 @@ namespace ResumeBuilder.Widgets.ListBoxTree
             upButton.Click += upButton_Click;
             downButton.Click += downButton_Click;
 
-            Controls.Add(listBoxTitleLabel);
-            Controls.Add(listBox);
-            Controls.Add(upButton);
-            Controls.Add(downButton);
+            Controls.AddRange(
+                listBoxTitleLabel,
+                listBox,
+                upButton,
+                downButton
+            );
 
             DisplayItems([.. tree]);
         }

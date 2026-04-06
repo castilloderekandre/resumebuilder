@@ -533,7 +533,7 @@
             panel2.Controls.Add(label8);
             panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(label7);
-            panel2.Location = new Point(25, 22);
+            panel2.Location = new Point(668, 17);
             panel2.Name = "panel2";
             panel2.Size = new Size(754, 527);
             panel2.TabIndex = 7;
@@ -543,7 +543,7 @@
             hasOrganizationCheckBox.AutoSize = true;
             hasOrganizationCheckBox.Checked = true;
             hasOrganizationCheckBox.CheckState = CheckState.Checked;
-            hasOrganizationCheckBox.Location = new Point(109, 158);
+            hasOrganizationCheckBox.Location = new Point(209, 154);
             hasOrganizationCheckBox.Name = "hasOrganizationCheckBox";
             hasOrganizationCheckBox.Size = new Size(122, 19);
             hasOrganizationCheckBox.TabIndex = 24;
@@ -587,7 +587,7 @@
             // 
             groupBox1.Controls.Add(hasNoDateCheckBox);
             groupBox1.Controls.Add(hasOneDateCheckBox);
-            groupBox1.Location = new Point(209, 48);
+            groupBox1.Location = new Point(209, 52);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(142, 85);
             groupBox1.TabIndex = 20;
@@ -638,7 +638,7 @@
             checkBox3.AutoSize = true;
             checkBox3.Checked = true;
             checkBox3.CheckState = CheckState.Checked;
-            checkBox3.Location = new Point(109, 198);
+            checkBox3.Location = new Point(209, 198);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(96, 19);
             checkBox3.TabIndex = 16;
@@ -649,7 +649,7 @@
             // 
             textBox4.Location = new Point(3, 198);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
+            textBox4.Size = new Size(200, 23);
             textBox4.TabIndex = 15;
             // 
             // label11
@@ -665,7 +665,7 @@
             // 
             textBox3.Location = new Point(3, 154);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
+            textBox3.Size = new Size(200, 23);
             textBox3.TabIndex = 13;
             // 
             // label10
