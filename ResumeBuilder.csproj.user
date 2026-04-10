@@ -13,5 +13,8 @@
     <Compile Update="Widgets\ListBoxTree\ListBoxTree.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Widgets\SectionOverview\SectionOverview.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
