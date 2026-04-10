@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ResumeBuilder.Widgets.ListBoxItemPicker
 {
-    internal class ListBoxItemPicker(): Panel
+    internal class ListBoxItemPicker() : Panel
     {
         Resume? _resume;
         ListBox sourceListBox;
