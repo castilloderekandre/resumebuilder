@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.Widgets.ListBoxTree
+namespace ResumeBuilder.Widgets.TreeViewControl
 {
-    internal class ListBoxTree : Control
+    internal class TreeView : Control
     {
         // #####
         // GUI
@@ -32,9 +32,9 @@ namespace ResumeBuilder.Widgets.ListBoxTree
         };
         // ###
 
-        TreeController treeController;
+        TreeViewController treeController;
 
-        public ListBoxTree(string listBoxTitle, LinkedList<object> tree)
+        public TreeView(string listBoxTitle, LinkedList<object> tree)
         {
             Size = new Size(300, 250);
             listBoxTitleLabel.Text = listBoxTitle;
