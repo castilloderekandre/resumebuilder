@@ -65,8 +65,6 @@
             button17 = new Button();
             textBox5 = new TextBox();
             label19 = new Label();
-            label16 = new Label();
-            listBox1 = new ListBox();
             EntryOverviewTabPage = new TabPage();
             panel2 = new Panel();
             hasOrganizationCheckBox = new CheckBox();
@@ -108,6 +106,7 @@
             button6 = new Button();
             pictureBox2 = new PictureBox();
             label5 = new Label();
+            label1 = new Label();
             tabControl1.SuspendLayout();
             homeTabPage.SuspendLayout();
             panel6.SuspendLayout();
@@ -331,14 +330,11 @@
             // 
             // SectionOverviewTabPage
             // 
-            SectionOverviewTabPage.Controls.Add(button24);
-            SectionOverviewTabPage.Controls.Add(button23);
+            SectionOverviewTabPage.Controls.Add(label1);
             SectionOverviewTabPage.Controls.Add(button22);
             SectionOverviewTabPage.Controls.Add(label17);
             SectionOverviewTabPage.Controls.Add(pictureBox3);
             SectionOverviewTabPage.Controls.Add(panel3);
-            SectionOverviewTabPage.Controls.Add(label16);
-            SectionOverviewTabPage.Controls.Add(listBox1);
             SectionOverviewTabPage.Location = new Point(4, 24);
             SectionOverviewTabPage.Name = "SectionOverviewTabPage";
             SectionOverviewTabPage.Size = new Size(1530, 716);
@@ -348,7 +344,7 @@
             // 
             // button24
             // 
-            button24.Location = new Point(97, 307);
+            button24.Location = new Point(85, 47);
             button24.Name = "button24";
             button24.Size = new Size(75, 23);
             button24.TabIndex = 6;
@@ -357,7 +353,7 @@
             // 
             // button23
             // 
-            button23.Location = new Point(3, 307);
+            button23.Location = new Point(4, 47);
             button23.Name = "button23";
             button23.Size = new Size(75, 23);
             button23.TabIndex = 5;
@@ -366,7 +362,7 @@
             // 
             // button22
             // 
-            button22.Location = new Point(178, 307);
+            button22.Location = new Point(834, 548);
             button22.Name = "button22";
             button22.Size = new Size(200, 23);
             button22.TabIndex = 4;
@@ -376,7 +372,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(384, 9);
+            label17.Location = new Point(1040, 229);
             label17.Name = "label17";
             label17.Size = new Size(80, 15);
             label17.TabIndex = 0;
@@ -385,16 +381,18 @@
             // pictureBox3
             // 
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.Location = new Point(178, 27);
+            pictureBox3.Location = new Point(834, 247);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(200, 274);
+            pictureBox3.Size = new Size(200, 295);
             pictureBox3.TabIndex = 3;
             pictureBox3.TabStop = false;
             // 
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(button24);
             panel3.Controls.Add(button21);
+            panel3.Controls.Add(button23);
             panel3.Controls.Add(listBox7);
             panel3.Controls.Add(button20);
             panel3.Controls.Add(button19);
@@ -403,15 +401,15 @@
             panel3.Controls.Add(button17);
             panel3.Controls.Add(textBox5);
             panel3.Controls.Add(label19);
-            panel3.Location = new Point(384, 27);
+            panel3.Location = new Point(1040, 247);
             panel3.Name = "panel3";
-            panel3.Size = new Size(508, 309);
+            panel3.Size = new Size(508, 385);
             panel3.TabIndex = 2;
             // 
             // button21
             // 
             button21.Dock = DockStyle.Bottom;
-            button21.Location = new Point(0, 284);
+            button21.Location = new Point(0, 360);
             button21.Name = "button21";
             button21.Size = new Size(506, 23);
             button21.TabIndex = 8;
@@ -421,14 +419,14 @@
             // listBox7
             // 
             listBox7.FormattingEnabled = true;
-            listBox7.Location = new Point(291, 58);
+            listBox7.Location = new Point(292, 140);
             listBox7.Name = "listBox7";
             listBox7.Size = new Size(120, 199);
             listBox7.TabIndex = 7;
             // 
             // button20
             // 
-            button20.Location = new Point(210, 84);
+            button20.Location = new Point(211, 166);
             button20.Name = "button20";
             button20.Size = new Size(75, 23);
             button20.TabIndex = 6;
@@ -437,7 +435,7 @@
             // 
             // button19
             // 
-            button19.Location = new Point(210, 58);
+            button19.Location = new Point(211, 140);
             button19.Name = "button19";
             button19.Size = new Size(75, 23);
             button19.TabIndex = 5;
@@ -447,14 +445,14 @@
             // listBox3
             // 
             listBox3.FormattingEnabled = true;
-            listBox3.Location = new Point(84, 58);
+            listBox3.Location = new Point(85, 140);
             listBox3.Name = "listBox3";
             listBox3.Size = new Size(120, 199);
             listBox3.TabIndex = 4;
             // 
             // button18
             // 
-            button18.Location = new Point(3, 84);
+            button18.Location = new Point(4, 166);
             button18.Name = "button18";
             button18.Size = new Size(75, 23);
             button18.TabIndex = 3;
@@ -463,7 +461,7 @@
             // 
             // button17
             // 
-            button17.Location = new Point(3, 55);
+            button17.Location = new Point(4, 137);
             button17.Name = "button17";
             button17.Size = new Size(75, 23);
             button17.TabIndex = 2;
@@ -472,36 +470,19 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(84, 29);
+            textBox5.Location = new Point(3, 18);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(120, 23);
+            textBox5.Size = new Size(157, 23);
             textBox5.TabIndex = 1;
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(84, 11);
+            label19.Location = new Point(3, 0);
             label19.Name = "label19";
             label19.Size = new Size(72, 15);
             label19.TabIndex = 0;
             label19.Text = "Section Title";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(3, 9);
-            label16.Name = "label16";
-            label16.Size = new Size(72, 15);
-            label16.TabIndex = 1;
-            label16.Text = "Section Title";
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(3, 27);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(169, 274);
-            listBox1.TabIndex = 0;
             // 
             // EntryOverviewTabPage
             // 
@@ -894,6 +875,15 @@
             label5.TabIndex = 22;
             label5.Text = "Preview";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(834, 229);
+            label1.Name = "label1";
+            label1.Size = new Size(48, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Preview";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -935,7 +925,6 @@
         private TextBox textBox1;
         private Label label2;
         private Label label1;
-        private ListBox listBox1;
         private Button button4;
         private Button button3;
         private ListBox SectionListBox;
@@ -988,7 +977,6 @@
         private PictureBox pictureBox3;
         private Panel panel3;
         private Label label17;
-        private Label label16;
         private Button button24;
         private Button button23;
         private Button button22;
