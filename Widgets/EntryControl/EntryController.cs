@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.EntryController
+namespace ResumeBuilder.Widgets.EntryControl
 {
     internal class EntryController : Control
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.Widgets.ListBoxItemPicker
+namespace ResumeBuilder.Widgets.ItemPickerControl
 {
-    internal class ListBoxItemPicker() : Panel
+    internal class ItemPicker : Panel
     {
         Resume? _resume;
         ListBox sourceListBox;
@@ -14,7 +14,7 @@ namespace ResumeBuilder.Widgets.ListBoxItemPicker
         Button moveUpButton;
         Button moveDownButton;
 
-        public ListBoxItemPicker(Resume? resume) : this()
+        public ItemPicker(Resume? resume)
         {
             _resume = resume;
             sourceListBox = new ListBox();
