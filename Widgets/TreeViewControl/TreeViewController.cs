@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO.Compression;
 using System.Text;
 
-namespace ResumeBuilder.Widgets
+namespace ResumeBuilder.Widgets.TreeViewControl
 {
-    internal class TreeController(ListBox listBox, LinkedList<object> tree)
+    internal class TreeViewController(ListBox listBox, LinkedList<object> tree)
     {
         ListBox _listBox = listBox;
         LinkedList<object> _tree = tree;

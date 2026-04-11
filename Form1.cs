@@ -1,7 +1,7 @@
 using ResumeBuilder.Widgets.ListBoxTree;
-using ResumeBuilder.EntryController;
 using System.Diagnostics;
 using System.Text.Json;
+using ResumeBuilder.Widgets.EntryControl;
 
 namespace ResumeBuilder
 {
@@ -21,7 +21,7 @@ namespace ResumeBuilder
             homeTabPage.Controls.Add(resetButton);
 
             homeTabPage.Controls.Add(
-                new ListBoxTree( 
+                new Widgets.ListBoxTree.TreeView( 
                     "Title test", 
                     new LinkedList<object>(
                         [
@@ -37,7 +37,7 @@ namespace ResumeBuilder
                 )
             );
 
-            EntryController.EntryController entryController = new();
+            EntryController entryController = new();
             EntryOverviewTabPage.Controls.Add(entryController);
         }
 
