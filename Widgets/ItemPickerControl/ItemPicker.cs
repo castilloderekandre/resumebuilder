@@ -4,27 +4,37 @@ using System.Text;
 
 namespace ResumeBuilder.Widgets.ItemPickerControl
 {
-    internal class ItemPicker : Panel
+    internal class ItemPicker : Control
     {
-        Resume? _resume;
-        ListBox sourceListBox;
-        ListBox destinationListBox;
-        Button moveInButton;
-        Button moveOutButton;
-        Button moveUpButton;
-        Button moveDownButton;
-
-        public ItemPicker(Resume? resume)
+        TreeView receivingTreeView = new TreeView()
         {
-            _resume = resume;
-            sourceListBox = new ListBox();
-            destinationListBox = new ListBox();
-            moveInButton = new Button();
-            moveOutButton = new Button();
-            moveUpButton = new Button();
-            moveDownButton = new Button();
 
-            // GUI creation goes here...
+        };
+        TreeView sourceTreeView = new TreeView()
+        {
+
+        };
+
+        Button moveInButton = new Button()
+        {
+
+        };
+        Button moveOutButton = new Button()
+        {
+
+        };
+        Button moveUpButton = new Button()
+        {
+
+        };
+        Button moveDownButton = new Button()
+        {
+
+        };
+
+        public ItemPicker(LinkedList<object> tree)
+        {
+
         }
     }
 }
