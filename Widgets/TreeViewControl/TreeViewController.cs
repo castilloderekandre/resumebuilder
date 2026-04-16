@@ -6,10 +6,20 @@ using System.Text;
 
 namespace ResumeBuilder.Widgets.TreeViewControl
 {
-    internal class TreeViewController(ListBox listBox, NTree<object> tree)
+    internal class TreeViewController
     {
-        ListBox _listBox = listBox;
-        NTree<object> _tree = tree;
+        ListBox _listBox;
+        NTree<object> _tree;
+        List<object> _flatTree;
+
+        private TreeViewController(ListBox listBox, NTree<object> tree)
+        {
+            _listBox = listBox;
+            _tree = tree;
+
+            _flatTree = _tree.ToList();
+            AddRange(_flatTree);
+        }
 
         //public Resume? Resume { 
         //    get;
@@ -111,6 +121,11 @@ namespace ResumeBuilder.Widgets.TreeViewControl
         public void AddItem(object item)
         {
             _listBox.Items.Add(item);
+        }
+
+        public void AddRange(params object[] items)
+        {
+            _listBox.Items.AddRange(items);
         }
 
         public void RemoveItem(object item)
