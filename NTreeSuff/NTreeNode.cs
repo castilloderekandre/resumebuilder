@@ -8,7 +8,7 @@ namespace ResumeBuilder.NTreeSuff
     {
         public NTreeNode<T>? Parent;
         public T? Data;
-        public List<NTreeNode<T>>? Children;
+        public List<NTreeNode<T>> Children = new();
 
         public NTreeNode()
         {
