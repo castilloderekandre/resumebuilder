@@ -57,5 +57,29 @@ namespace ResumeBuilder.NTreeSuff
         {
 
         }
+
+        public NTreeNode<T>? FindNode(NTreeNode<T> sourceNode, T dataToFind, Predicate<object> predicate)
+        {
+            if (sourceNode.Data is not null)
+            {
+                if (predicate(sourceNode.Data))
+                    return sourceNode;
+            }
+
+            if (sourceNode.Children is null)
+                return null;
+
+            foreach(NTreeNode<T> node in sourceNode.Children)
+            {
+                if (node.Children is not null)
+                {
+                    NTreeNode<T>? result = FindNode(node, dataToFind, predicate);
+                    if (result is not null)
+                        return result;
+                }
+            }
+
+            return null;
+        }
     }
 }
