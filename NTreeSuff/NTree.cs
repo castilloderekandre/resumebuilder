@@ -79,9 +79,9 @@ namespace ResumeBuilder.NTreeSuff
             }
         }
 
-        public List<NTreeNode<T>> ToList()
+        public List<object> ToList()
         {
-            List<NTreeNode<T>> list = []; 
+            List<object> list = []; 
 
             foreach(NTreeNode<T> node in Nodes)
                 list.Add(node);
