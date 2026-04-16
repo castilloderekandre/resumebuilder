@@ -1,14 +1,15 @@
-﻿using System;
+﻿using ResumeBuilder.NTreeSuff;
+using System;
 using System.Collections.Generic;
 using System.IO.Compression;
 using System.Text;
 
 namespace ResumeBuilder.Widgets.TreeViewControl
 {
-    internal class TreeViewController(ListBox listBox, LinkedList<object> tree)
+    internal class TreeViewController(ListBox listBox, NTree<object> tree)
     {
         ListBox _listBox = listBox;
-        LinkedList<object> _tree = tree;
+        NTree<object> _tree = tree;
 
         //public Resume? Resume { 
         //    get;
