@@ -65,6 +65,16 @@ namespace ResumeBuilder.Widgets.TreeViewControl
 
         public void MoveSelectedItemUp()
         {
+            MoveSelectedItemUpInListBox();
+        }
+
+        public void MoveSelectedItemDown()
+        {
+            MoveSelectedItemDownInListBox();
+        }
+
+        private void MoveSelectedItemUpInListBox()
+        {
             int index = _listBox.SelectedIndex;
             object? item = _listBox.SelectedItem;
 
@@ -80,8 +90,9 @@ namespace ResumeBuilder.Widgets.TreeViewControl
             _listBox.SelectedItem = item;
         }
 
-        public void MoveSelectedItemDown()
+        private void MoveSelectedItemDownInListBox()
         {
+
             int index = _listBox.SelectedIndex;
             object? item = _listBox.SelectedItem;
 
