@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder
+namespace ResumeBuilder.Core
 {
     internal class Resume
     {

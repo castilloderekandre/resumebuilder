@@ -1,7 +1,8 @@
-using ResumeBuilder.Widgets.ListBoxTree;
+using ResumeBuilder.UI.Widgets;
 using System.Diagnostics;
 using System.Text.Json;
-using ResumeBuilder.Widgets.EntryControl;
+using ResumeBuilder.UI.Widgets.EntryControl;
+using ResumeBuilder.Core;
 
 namespace ResumeBuilder
 {
@@ -20,22 +21,22 @@ namespace ResumeBuilder
             resetButton.Click += resetButton_Click;
             homeTabPage.Controls.Add(resetButton);
 
-            homeTabPage.Controls.Add(
-                new Widgets.ListBoxTree.TreeView( 
-                    "Title test", 
-                    new LinkedList<object>(
-                        [
-                            "section1", 
-                            "entry1",
-                            "entry2",
-                            "section2", 
-                            "entry1",
-                            "entry2",
-                            "entry3"
-                        ]
-                    ) 
-                )
-            );
+            //homeTabPage.Controls.Add(
+            //    new TreeView( 
+            //        "Title test", 
+            //        new LinkedList<object>(
+            //            [
+            //                "section1", 
+            //                "entry1",
+            //                "entry2",
+            //                "section2", 
+            //                "entry1",
+            //                "entry2",
+            //                "entry3"
+            //            ]
+            //        ) 
+            //    )
+            //);
 
             EntryController entryController = new();
             EntryOverviewTabPage.Controls.Add(entryController);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.NTreeSuff
+namespace ResumeBuilder.Core.NTreeSuff
 {
     internal class NTreeNode<T>
     {
