@@ -1,4 +1,4 @@
-namespace ResumeBuilder
+namespace ResumeBuilder.Core
 {
     internal static class Program
     {

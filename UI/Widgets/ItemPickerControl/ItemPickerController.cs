@@ -1,10 +1,10 @@
-﻿using ResumeBuilder.Widgets.TreeViewControl;
+﻿using ResumeBuilder.UI.Widgets.TreeViewControl;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ResumeBuilder.Widgets.ItemPickerControl
+namespace ResumeBuilder.UI.Widgets.ItemPickerControl
 {
     internal class ItemPickerController(TreeViewController sourceTreeController, TreeViewController destinationTreeController)
     {
