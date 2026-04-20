@@ -1,10 +1,10 @@
-﻿using ResumeBuilder.NTreeSuff;
+﻿using ResumeBuilder.Core.NTreeSuff;
 using System;
 using System.Collections.Generic;
 using System.IO.Compression;
 using System.Text;
 
-namespace ResumeBuilder.Widgets.TreeViewControl
+namespace ResumeBuilder.UI.Widgets.TreeViewControl
 {
     internal class TreeViewController
     {

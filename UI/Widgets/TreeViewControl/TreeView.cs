@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.Widgets.TreeViewControl
+namespace ResumeBuilder.UI.Widgets.TreeViewControl
 {
     internal class TreeView : Control
     {
@@ -38,7 +38,7 @@ namespace ResumeBuilder.Widgets.TreeViewControl
         {
             Size = new Size(300, 250);
             listBoxTitleLabel.Text = listBoxTitle;
-            treeController = new(listBox, tree);
+            //treeController = new(listBox, tree);
 
             upButton.Click += upButton_Click;
             downButton.Click += downButton_Click;
