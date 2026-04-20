@@ -118,6 +118,11 @@ namespace ResumeBuilder.Widgets.TreeViewControl
             _listBox.SelectedItem = item;
         }
 
+        private int GetSelectedIndex()
+        {
+            return _listBox.SelectedIndex;
+        }
+
         public void AddItem(object item)
         {
             _listBox.Items.Add(item);
