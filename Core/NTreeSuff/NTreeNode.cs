@@ -14,5 +14,10 @@ namespace ResumeBuilder.Core.NTreeSuff
         {
 
         }
+
+        public NTreeNode(NTreeNode<T> parent)
+        {
+            Parent = parent;
+        }
     }
 }
