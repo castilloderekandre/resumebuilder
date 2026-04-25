@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.Core.NTreeSuff
+namespace ResumeBuilder.NTreeSuff
 {
-    internal class NTree<T>
+    public class NTree<T>
     {
         NTreeNode<T> root = new();
 
