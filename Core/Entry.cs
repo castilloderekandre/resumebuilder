@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.Core
+namespace ResumeBuilder
 {
-    internal class Entry (string title, DateTime? startDate, DateTime? endDate, bool hasOneDate, bool hasNoDate, string? organization, bool hasOrganization, string? address, bool hasAddress, string body)
+    public class Entry (string title, DateTime? startDate, DateTime? endDate, bool hasOneDate, bool hasNoDate, string? organization, bool hasOrganization, string? address, bool hasAddress, string body)
     {
         public Section? Section { get; set; }
         public string Title { get; set; } = title;

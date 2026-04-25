@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.Core
+namespace ResumeBuilder
 {
-    internal class Section
+    public class Section
     {
         public string Title { get; set; }
         public List<Entry> Entries { get; set; } = [];
