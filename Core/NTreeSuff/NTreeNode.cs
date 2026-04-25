@@ -15,6 +15,11 @@ namespace ResumeBuilder.NTreeSuff
 
         }
 
+        public NTreeNode(T data)
+        {
+            Data = data;
+        }
+
         public NTreeNode(NTreeNode<T> parent)
         {
             Parent = parent;
