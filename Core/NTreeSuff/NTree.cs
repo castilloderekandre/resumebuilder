@@ -71,10 +71,21 @@ namespace ResumeBuilder.NTreeSuff
             }
         }
 
-        public NTreeNode<T>? FindNode(int id)
+        public NTreeNode<T>? GetNode(int id)
         {
             if (Dictionary.ContainsKey(id))
                 return Dictionary[id];
+
+            return null;
+        }
+
+        public NTreeNode<T>? FindNode(Predicate<NTreeNode<T>> predicate)
+        {
+            foreach (NTreeNode<T> node in Traverse(root))
+            {
+                if (predicate(node))
+                    return node;
+            }
 
             return null;
         }
