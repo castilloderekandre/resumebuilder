@@ -12,7 +12,7 @@ public class NTreeTests
 
         int id = tree.AddChild(0, node);
 
-        NTreeNode<string>? result = tree.FindNode(id);
+        NTreeNode<string>? result = tree.GetNode(id);
 
         Assert.NotNull(result);
         Assert.Equal(node.Data, result.Data);
