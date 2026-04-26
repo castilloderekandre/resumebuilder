@@ -20,26 +20,21 @@ namespace ResumeBuilder.NTreeSuff
             root.Children.AddRange(list);
         }
 
-        public void AddChild(int id, T data)
+        public int AddChild(int id, T data)
         {
-            if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
-                throw new KeyNotFoundException();
-
-            NTreeNode<T> child = new(data);
-
-            parent.Children.Add(child);
-
-            Dictionary.Add(id_tracker++, child);
+            return AddChild(id, new NTreeNode<T>(data));
         }
 
-        public void AddChild(int id, NTreeNode<T> child)
+        public int AddChild(int id, NTreeNode<T> child)
         {
             if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
                 throw new KeyNotFoundException();
 
             parent.Children.Add(child);
 
-            Dictionary.Add(id_tracker++, child);
+            Dictionary.Add(id_tracker, child);
+
+            return id_tracker++;
         }
 
         public void AddRange(NTreeNode<T> parent, List<NTreeNode<T>> list)
