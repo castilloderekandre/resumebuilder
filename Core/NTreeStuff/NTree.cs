@@ -8,7 +8,7 @@ namespace ResumeBuilder.NTreeSuff
     {
         NTreeNode<T> root = new();
         public Dictionary<int, NTreeNode<T>> Dictionary = new();
-        static int id_tracker = 0;
+        int id_tracker = 0;
 
         public NTree()
         {
@@ -20,26 +20,21 @@ namespace ResumeBuilder.NTreeSuff
             root.Children.AddRange(list);
         }
 
-        public void AddChild(int id, T data)
+        public int AddChild(int id, T data)
         {
-            if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
-                throw new KeyNotFoundException();
-
-            NTreeNode<T> child = new(data);
-
-            parent.Children.Add(child);
-
-            Dictionary.Add(id_tracker++, child);
+            return AddChild(id, new NTreeNode<T>(data));
         }
 
-        public void AddChild(int id, NTreeNode<T> child)
+        public int AddChild(int id, NTreeNode<T> child)
         {
             if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
                 throw new KeyNotFoundException();
 
             parent.Children.Add(child);
 
-            Dictionary.Add(id_tracker++, child);
+            Dictionary.Add(id_tracker, child);
+
+            return id_tracker++;
         }
 
         public void AddRange(NTreeNode<T> parent, List<NTreeNode<T>> list)
@@ -76,10 +71,21 @@ namespace ResumeBuilder.NTreeSuff
             }
         }
 
-        public NTreeNode<T>? FindNode(int id)
+        public NTreeNode<T>? GetNode(int id)
         {
             if (Dictionary.ContainsKey(id))
                 return Dictionary[id];
+
+            return null;
+        }
+
+        public NTreeNode<T>? FindNode(Predicate<NTreeNode<T>> predicate)
+        {
+            foreach (NTreeNode<T> node in Traverse(root))
+            {
+                if (predicate(node))
+                    return node;
+            }
 
             return null;
         }
