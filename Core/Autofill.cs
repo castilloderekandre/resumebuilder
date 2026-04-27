@@ -52,7 +52,7 @@ namespace ResumeBuilder
             bool hasAddress = random.NextDouble() < 0.5;
 
             return new Entry(
-                PickOne(titles),
+                PickOne(titles)!,
                 startDate,
                 endDate,
                 hasOneDate,
@@ -61,7 +61,7 @@ namespace ResumeBuilder
                 hasOrganization,
                 GenerateStreet(),
                 hasAddress,
-                PickOne(bodies)
+                PickOne(bodies)!
                 );
         }
 
