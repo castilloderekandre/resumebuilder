@@ -1,4 +1,4 @@
-﻿using ResumeBuilder.NTreeSuff;
+﻿using Core.NTreeStuff;
 
 namespace Core.Tests;
 
