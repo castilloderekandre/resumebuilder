@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder
+namespace Core
 {
     public class Entry (string title, DateTime? startDate, DateTime? endDate, bool hasOneDate, bool hasNoDate, string? organization, bool hasOrganization, string? address, bool hasAddress, string body)
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder
+namespace Core
 {
     // Title, start date, end date, has one date, has no date, organization, has organization, address, has address, body
     public static class Autofill
