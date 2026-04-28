@@ -1,10 +1,12 @@
-﻿using ResumeBuilder.Core.NTreeSuff;
+﻿using Core.Extensions;
+using Core.NTreeStuff;
 using System;
 using System.Collections.Generic;
 using System.IO.Compression;
 using System.Text;
+using System.Windows.Controls;
 
-namespace ResumeBuilder.UI.Widgets.TreeViewControl
+namespace UI.Widgets.TreeViewControl
 {
     internal class TreeViewController
     {
@@ -12,7 +14,7 @@ namespace ResumeBuilder.UI.Widgets.TreeViewControl
         NTree<object> _tree;
         List<object> _flatTree;
 
-        private TreeViewController(ListBox listBox, NTree<object> tree)
+        public TreeViewController(ListBox listBox, NTree<object> tree)
         {
             _listBox = listBox;
             _tree = tree;
@@ -66,7 +68,7 @@ namespace ResumeBuilder.UI.Widgets.TreeViewControl
         void DisplayText(object[] items)
         {
             _listBox.Items.Clear();
-            _listBox.Items.AddRange(items);
+            AddRange(items);
         }
 
         void FormatText()
@@ -76,23 +78,30 @@ namespace ResumeBuilder.UI.Widgets.TreeViewControl
 
         public void MoveSelectedItemUp()
         {
-            MoveSelectedItemUpInListBox();
+            int index = GetSelectedIndex();
+            _flatTree.MoveItemUp(index);
+            _listBox.Items.Clear();
+            AddRange(_flatTree);
+            // MoveSelectedItemUpInListBox();
         }
 
         public void MoveSelectedItemDown()
         {
-            MoveSelectedItemDownInListBox();
+            int index = GetSelectedIndex();
+            _flatTree.MoveItemDown(GetSelectedIndex());
+            _listBox.Items.Clear();
+            AddRange(_flatTree);
+            // MoveSelectedItemDownInListBox();
         }
 
         private void MoveSelectedItemUpInListBox()
         {
-            int index = _listBox.SelectedIndex;
+            int index = GetSelectedIndex();
             object? item = _listBox.SelectedItem;
 
             if (item is null)
                 return;
 
-            //When an item is removed is it disposed too or left for garbage collection?
             _listBox.Items.RemoveAt(index);
 
             index = --index < 0 ? 
@@ -104,7 +113,7 @@ namespace ResumeBuilder.UI.Widgets.TreeViewControl
         private void MoveSelectedItemDownInListBox()
         {
 
-            int index = _listBox.SelectedIndex;
+            int index = GetSelectedIndex();
             object? item = _listBox.SelectedItem;
 
             if (item is null)
@@ -128,9 +137,12 @@ namespace ResumeBuilder.UI.Widgets.TreeViewControl
             _listBox.Items.Add(item);
         }
 
+        // [TODO] Implement custom ObservableCollection<T> to suppress UI refreshes
+        // by manually raising NotifyCollectionChangedAction.Reset
         public void AddRange(params object[] items)
         {
-            _listBox.Items.AddRange(items);
+            foreach (object item in items)
+                _listBox.Items.Add(item); // UI is refreshed for each Add() call
         }
 
         public void RemoveItem(object item)
