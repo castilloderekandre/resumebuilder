@@ -12,7 +12,7 @@ namespace UI.Widgets.TreeViewControl
     {
         ListBox _listBox;
         NTree<object> _tree;
-        List<object> _flatTree;
+        List<NTreeNode<object>> _flatTree;
 
         public TreeViewController(ListBox listBox, NTree<object> tree)
         {
