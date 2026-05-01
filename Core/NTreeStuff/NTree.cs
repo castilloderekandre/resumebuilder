@@ -37,6 +37,15 @@ namespace Core.NTreeStuff
             return id_tracker++;
         }
 
+        public int AddChild(NTreeNode<T> parent, NTreeNode<T> child)
+        {
+            parent.Children.Add(child);
+
+            Dictionary.Add(id_tracker, child);
+
+            return id_tracker++;
+        }
+
         public void AddRange(NTreeNode<T> parent, List<NTreeNode<T>> list)
         {
             parent.Children.AddRange(list);
@@ -101,11 +110,11 @@ namespace Core.NTreeStuff
             }
         }
 
-        public List<object> ToList()
+        public List<NTreeNode<T>> ToList()
         {
-            List<object> list = []; 
+            List<NTreeNode<T>> list = []; 
 
-            foreach(NTreeNode<T> node in root.Children)
+            foreach(NTreeNode<T> node in Traverse(root))
                 list.Add(node);
 
             return list;
