@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder
+namespace Core
 {
     // Title, start date, end date, has one date, has no date, organization, has organization, address, has address, body
     public static class Autofill
@@ -52,7 +52,7 @@ namespace ResumeBuilder
             bool hasAddress = random.NextDouble() < 0.5;
 
             return new Entry(
-                PickOne(titles),
+                PickOne(titles)!,
                 startDate,
                 endDate,
                 hasOneDate,
@@ -61,7 +61,7 @@ namespace ResumeBuilder
                 hasOrganization,
                 GenerateStreet(),
                 hasAddress,
-                PickOne(bodies)
+                PickOne(bodies)!
                 );
         }
 

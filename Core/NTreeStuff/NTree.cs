@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ResumeBuilder.NTreeSuff
+namespace Core.NTreeStuff
 {
     public class NTree<T>
     {
         NTreeNode<T> root = new();
         public Dictionary<int, NTreeNode<T>> Dictionary = new();
-        static int id_tracker = 0;
+        int id_tracker = 0;
 
         public NTree()
         {
