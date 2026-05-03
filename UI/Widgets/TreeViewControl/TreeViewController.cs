@@ -79,18 +79,22 @@ namespace UI.Widgets.TreeViewControl
         public void MoveSelectedItemUp()
         {
             int index = GetSelectedIndex();
-            _flatTree.MoveItemUp(index);
+            index = _flatTree.MoveItemUp(index);
             _listBox.Items.Clear();
             AddRange(_flatTree);
+            _listBox.SelectedIndex = index;
+            _listBox.Focus();
             // MoveSelectedItemUpInListBox();
         }
 
         public void MoveSelectedItemDown()
         {
             int index = GetSelectedIndex();
-            _flatTree.MoveItemDown(GetSelectedIndex());
+            index = _flatTree.MoveItemDown(GetSelectedIndex());
             _listBox.Items.Clear();
             AddRange(_flatTree);
+            _listBox.SelectedIndex = index;
+            _listBox.Focus();
             // MoveSelectedItemDownInListBox();
         }
 
