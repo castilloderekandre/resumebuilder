@@ -22,7 +22,7 @@ namespace Core.Extensions
             }
             public int MoveItemDown(int index)
             {
-                if (index + 1 > list.Count)
+                if (index + 1 >= list.Count)
                     return index;
                     // throw new IndexOutOfRangeException();
 
