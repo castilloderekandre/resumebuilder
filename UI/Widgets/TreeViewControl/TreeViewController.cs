@@ -65,7 +65,7 @@ namespace UI.Widgets.TreeViewControl
         //    return [.. flattenedItems];
         //}
 
-        void DisplayText(object[] items)
+        void DisplayText<T>(List<NTreeNode<T>> items)
         {
             _listBox.Items.Clear();
             AddRange(items);
@@ -132,17 +132,17 @@ namespace UI.Widgets.TreeViewControl
             return _listBox.SelectedIndex;
         }
 
-        public void AddItem(object item)
+        public void AddItem<T>(NTreeNode<T> item)
         {
-            _listBox.Items.Add(item);
+            _listBox.Items.Add(item.Data);
         }
 
         // [TODO] Implement custom ObservableCollection<T> to suppress UI refreshes
         // by manually raising NotifyCollectionChangedAction.Reset
-        public void AddRange(params object[] items)
+        public void AddRange<T>(List<NTreeNode<T>> treeList)
         {
-            foreach (object item in items)
-                _listBox.Items.Add(item); // UI is refreshed for each Add() call
+            foreach (NTreeNode<T> item in treeList)
+                _listBox.Items.Add(item.Data); // UI is refreshed for each Add() call
         }
 
         public void RemoveItem(object item)
