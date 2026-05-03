@@ -10,7 +10,7 @@ namespace Core.Extensions
         {
             public void MoveItemUp(int index)
             {
-                if (index - 1 < 0)
+                if (index - 1 <= 0)
                     throw new IndexOutOfRangeException();
 
                 T auxiliary = list[index - 1];
@@ -19,7 +19,7 @@ namespace Core.Extensions
             }
             public void MoveItemDown(int index)
             {
-                if (index >= list.Count)
+                if (index + 1 > list.Count)
                     throw new IndexOutOfRangeException();
 
                 T auxiliary = list[index + 1];
