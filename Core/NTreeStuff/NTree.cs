@@ -119,5 +119,18 @@ namespace Core.NTreeStuff
 
             return list;
         }
+
+        public List<T> DataToList()
+        {
+            List<T> list = [];
+
+            foreach(NTreeNode<T> node in Traverse(root))
+            {
+                if (node.Data is not null)
+                list.Add(node.Data);
+            }
+
+            return list;
+        }
     }
 }
