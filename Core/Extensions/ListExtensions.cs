@@ -8,23 +8,29 @@ namespace Core.Extensions
     {
         extension<T>(List<T> list)
         {
-            public void MoveItemUp(int index)
+            public int MoveItemUp(int index)
             {
                 if (index - 1 <= 0)
-                    throw new IndexOutOfRangeException();
+                    return index;
+                    // throw new IndexOutOfRangeException();
 
                 T auxiliary = list[index - 1];
                 list[index - 1] = list[index];
                 list[index] = auxiliary;
+
+                return index;
             }
-            public void MoveItemDown(int index)
+            public int MoveItemDown(int index)
             {
                 if (index + 1 > list.Count)
-                    throw new IndexOutOfRangeException();
+                    return index;
+                    // throw new IndexOutOfRangeException();
 
                 T auxiliary = list[index + 1];
                 list[index + 1] = list[index];
                 list[index] = auxiliary;
+
+                return index;
             }
         }
     }
