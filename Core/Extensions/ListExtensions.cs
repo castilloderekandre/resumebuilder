@@ -18,7 +18,7 @@ namespace Core.Extensions
                 list[index - 1] = list[index];
                 list[index] = auxiliary;
 
-                return index;
+                return index - 1;
             }
             public int MoveItemDown(int index)
             {
@@ -30,7 +30,7 @@ namespace Core.Extensions
                 list[index + 1] = list[index];
                 list[index] = auxiliary;
 
-                return index;
+                return index + 1;
             }
         }
     }
