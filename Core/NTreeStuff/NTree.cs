@@ -15,6 +15,11 @@ namespace Core.NTreeStuff
             Dictionary.Add(id_tracker++, root);
         }
 
+        public NTree(NTreeNode<T> rootNode)
+        {
+            root = rootNode;
+        }
+
         public NTree(List<NTreeNode<T>> list)
         {
             root.Children.AddRange(list);

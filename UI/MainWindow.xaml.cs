@@ -22,28 +22,25 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         NTree<object> tree = new();
-        NTreeNode<object> node1 = new("node1");
-        NTreeNode<object> node2 = new("node2");
-        NTreeNode<object> node3 = new("node3");
-        NTreeNode<object> node4 = new("node4");
-        NTreeNode<object> node5 = new("node5");
-        NTreeNode<object> node6 = new("node6");
-        NTreeNode<object> node7 = new("node7");
-        NTreeNode<object> node8 = new("node8");
+        NTreeNode<object> node1 = new("section");
+        NTreeNode<object> node2 = new("section");
+        NTreeNode<object> node3 = new("entry a");
+        NTreeNode<object> node4 = new("entry b");
+        NTreeNode<object> node5 = new("entry c");
+        NTreeNode<object> node6 = new("entry d");
+        NTreeNode<object> node7 = new("entry e");
+        NTreeNode<object> node8 = new("entry f");
 
         tree.AddChild(0, node1);
         tree.AddChild(0, node2);
 
         tree.AddChild(node1, node3);
         tree.AddChild(node1, node4);
+        tree.AddChild(node1, node5);
 
-        tree.AddChild(node3, node5);
-
-        tree.AddChild(node5, node6);
-
+        tree.AddChild(node2, node6);
         tree.AddChild(node2, node7);
-
-        tree.AddChild(node7, node8);
+        tree.AddChild(node2, node8);
 
         Widgets.TreeViewControl.TreeView treeView = new("World", tree);
 
