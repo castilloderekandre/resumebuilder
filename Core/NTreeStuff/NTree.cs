@@ -73,26 +73,26 @@ namespace Core.NTreeStuff
             parent.Children.Remove(node);
         }
 
-        public void RemoveNode(Predicate<NTreeNode<T>> predicate)
+        public void RemoveNodesWhere(Predicate<NTreeNode<T>> predicate)
         {
-            foreach(NTreeNode<T> node in root.Children)
+            ForEach((node) =>
             {
                 if (predicate(node))
                     node.Parent!.Children.Remove(node);
-            }
+            });
         }
 
         public NTreeNode<T>? GetNode(int id)
         {
-            if (Dictionary.ContainsKey(id))
-                return Dictionary[id];
+            if (Dictionary.TryGetValue(id, out NTreeNode<T>? node))
+                return node;
 
             return null;
         }
 
         public NTreeNode<T>? FindNode(Predicate<NTreeNode<T>> predicate)
         {
-            foreach (NTreeNode<T> node in Traverse(root))
+            foreach(NTreeNode<T> node in Traverse(root))
             {
                 if (predicate(node))
                     return node;
@@ -109,6 +109,14 @@ namespace Core.NTreeStuff
             {
                 foreach (NTreeNode<T> descendant in Traverse(child))
                     yield return descendant;
+            }
+        }
+
+        public void ForEach(Action<NTreeNode<T>> action)
+        {
+            foreach(NTreeNode<T> node in Traverse(root))
+            {
+                action(node);
             }
         }
 
