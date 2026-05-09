@@ -1,4 +1,6 @@
-﻿using Core.NTreeStuff;
+﻿using Core.Extensions;
+using Core.NTreeStuff;
+using System.Diagnostics;
 
 namespace Core.Tests;
 
@@ -117,4 +119,81 @@ public class NTreeTests
 
         Assert.Same(node4, flatTree[5]);
     }
+
+    [Fact]
+    public void MoveItemUp_ListOfNTreeNodes_NodesStayWithinParentBoundaries()
+    {
+        NTree<string> tree = new();
+        NTreeNode<string> node1 = new("(node1) child 1 of root");
+        NTreeNode<string> node2 = new("(node2) child 2 of root");
+        NTreeNode<string> node3 = new("(node3) child 1 of 1");
+        NTreeNode<string> node4 = new("(node4) child 2 of 1");
+        NTreeNode<string> node5 = new("(node5) child 1 of 3");
+        NTreeNode<string> node6 = new("(node6) child 1 of 5");
+        NTreeNode<string> node7 = new("(node7) child 1 of 2");
+        NTreeNode<string> node8 = new("(node8) child 1 of 7");
+
+        tree.AddChild(0, node1);
+        tree.AddChild(0, node2);
+
+        tree.AddChild(node1, node3);
+        tree.AddChild(node1, node4);
+
+        tree.AddChild(node3, node5);
+
+        tree.AddChild(node5, node6);
+
+        tree.AddChild(node2, node7);
+
+        tree.AddChild(node7, node8);
+
+        List<NTreeNode<string>> flatTree = tree.ToList();
+
+        foreach(string value in tree.DataToList())
+            Debug.WriteLine(value);
+
+        int index = flatTree.MoveItemUp(2);
+
+        Assert.True(index == 2);
+        Assert.Same(node3, flatTree[2]);
+    }
+
+    [Fact]
+    public void MoveItemDown_ListOfNTreeNodes_NodesStayWithinParentBoundaries()
+    {
+        NTree<string> tree = new();
+        NTreeNode<string> node1 = new("(node1) child 1 of root");
+        NTreeNode<string> node2 = new("(node2) child 2 of root");
+        NTreeNode<string> node3 = new("(node3) child 1 of 1");
+        NTreeNode<string> node4 = new("(node4) child 2 of 1");
+        NTreeNode<string> node5 = new("(node5) child 1 of 3");
+        NTreeNode<string> node6 = new("(node6) child 1 of 5");
+        NTreeNode<string> node7 = new("(node7) child 1 of 2");
+        NTreeNode<string> node8 = new("(node8) child 1 of 7");
+
+        tree.AddChild(0, node1);
+        tree.AddChild(0, node2);
+
+        tree.AddChild(node1, node3);
+        tree.AddChild(node1, node4);
+
+        tree.AddChild(node3, node5);
+
+        tree.AddChild(node5, node6);
+
+        tree.AddChild(node2, node7);
+
+        tree.AddChild(node2, node8);
+
+        List<NTreeNode<string>> flatTree = tree.ToList();
+
+        foreach(string value in tree.DataToList())
+            Debug.WriteLine(value);
+
+        int index = flatTree.MoveItemDown(7);
+
+        Assert.True(index == 8);
+        Assert.Same(node7, flatTree[8]);
+    }
 }
+
