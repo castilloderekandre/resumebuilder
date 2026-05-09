@@ -30,6 +30,7 @@ namespace Core.NTreeStuff
             if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
                 throw new KeyNotFoundException();
 
+            child.Parent = parent;
             parent.Children.Add(child);
 
             Dictionary.Add(id_tracker, child);
@@ -39,6 +40,7 @@ namespace Core.NTreeStuff
 
         public int AddChild(NTreeNode<T> parent, NTreeNode<T> child)
         {
+            child.Parent = parent;
             parent.Children.Add(child);
 
             Dictionary.Add(id_tracker, child);
@@ -57,40 +59,34 @@ namespace Core.NTreeStuff
             parent.Children.AddRange(list);
         }
 
-        public void RemoveNode(NTreeNode<T> nodeToRemove)
+        public void RemoveNode(NTreeNode<T> node)
         {
-            foreach (NTreeNode<T> node in root.Children)
-            {
-                if (node.Equals(nodeToRemove))
-                    node.Parent!.Children.Remove(nodeToRemove);
-            }
+            if (node.Parent is null)
+                return;
+
+            node.Parent.Children.Remove(node);
         }
 
-        public void RemoveNode(NTreeNode<T> parent, NTreeNode<T> node)
+        public void RemoveNodesWhere(Predicate<NTreeNode<T>> predicate)
         {
-            parent.Children.Remove(node);
-        }
-
-        public void RemoveNode(Predicate<NTreeNode<T>> predicate)
-        {
-            foreach(NTreeNode<T> node in root.Children)
+            ForEach((node) =>
             {
                 if (predicate(node))
                     node.Parent!.Children.Remove(node);
-            }
+            });
         }
 
         public NTreeNode<T>? GetNode(int id)
         {
-            if (Dictionary.ContainsKey(id))
-                return Dictionary[id];
+            if (Dictionary.TryGetValue(id, out NTreeNode<T>? node))
+                return node;
 
             return null;
         }
 
         public NTreeNode<T>? FindNode(Predicate<NTreeNode<T>> predicate)
         {
-            foreach (NTreeNode<T> node in Traverse(root))
+            foreach(NTreeNode<T> node in Traverse(root))
             {
                 if (predicate(node))
                     return node;
@@ -110,12 +106,33 @@ namespace Core.NTreeStuff
             }
         }
 
+        public void ForEach(Action<NTreeNode<T>> action)
+        {
+            foreach(NTreeNode<T> node in Traverse(root))
+            {
+                action(node);
+            }
+        }
+
         public List<NTreeNode<T>> ToList()
         {
             List<NTreeNode<T>> list = []; 
 
             foreach(NTreeNode<T> node in Traverse(root))
                 list.Add(node);
+
+            return list;
+        }
+
+        public List<T> DataToList()
+        {
+            List<T> list = [];
+
+            foreach(NTreeNode<T> node in Traverse(root))
+            {
+                if (node.Data is not null)
+                list.Add(node.Data);
+            }
 
             return list;
         }
