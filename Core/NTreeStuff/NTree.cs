@@ -30,6 +30,7 @@ namespace Core.NTreeStuff
             if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
                 throw new KeyNotFoundException();
 
+            child.Parent = parent;
             parent.Children.Add(child);
 
             Dictionary.Add(id_tracker, child);
@@ -39,6 +40,7 @@ namespace Core.NTreeStuff
 
         public int AddChild(NTreeNode<T> parent, NTreeNode<T> child)
         {
+            child.Parent = parent;
             parent.Children.Add(child);
 
             Dictionary.Add(id_tracker, child);
