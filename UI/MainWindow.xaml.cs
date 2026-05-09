@@ -36,14 +36,11 @@ public partial class MainWindow : Window
 
         tree.AddChild(node1, node3);
         tree.AddChild(node1, node4);
+        tree.AddChild(node1, node5);
 
-        tree.AddChild(node3, node5);
-
-        tree.AddChild(node5, node6);
-
+        tree.AddChild(node2, node6);
         tree.AddChild(node2, node7);
-
-        tree.AddChild(node7, node8);
+        tree.AddChild(node2, node8);
 
         Widgets.TreeViewControl.TreeView treeView = new("World", tree);
 
