@@ -59,18 +59,12 @@ namespace Core.NTreeStuff
             parent.Children.AddRange(list);
         }
 
-        public void RemoveNode(NTreeNode<T> nodeToRemove)
+        public void RemoveNode(NTreeNode<T> node)
         {
-            foreach (NTreeNode<T> node in root.Children)
-            {
-                if (node.Equals(nodeToRemove))
-                    node.Parent!.Children.Remove(nodeToRemove);
-            }
-        }
+            if (node.Parent is null)
+                return;
 
-        public void RemoveNode(NTreeNode<T> parent, NTreeNode<T> node)
-        {
-            parent.Children.Remove(node);
+            node.Parent.Children.Remove(node);
         }
 
         public void RemoveNodesWhere(Predicate<NTreeNode<T>> predicate)
