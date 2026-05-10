@@ -9,6 +9,7 @@ namespace Core.NTreeStuff
         public NTreeNode<T>? Parent;
         public T? Data;
         public List<NTreeNode<T>> Children = new();
+        public int Level;
 
         public NTreeNode()
         {
