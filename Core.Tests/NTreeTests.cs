@@ -195,5 +195,52 @@ public class NTreeTests
         Assert.True(index == 8);
         Assert.Same(node7, flatTree[8]);
     }
+
+     [Fact]
+    public void Level_NTreeNode_LevelValueIsCorrect()
+    {
+        NTreeNode<string> root = new NTreeNode<string>("root");
+        NTree<string> tree = new(root);
+        NTreeNode<string> node1 = new("node1");
+        NTreeNode<string> node2 = new("node2");
+        NTreeNode<string> node3 = new("node3");
+        NTreeNode<string> node4 = new("node4");
+        NTreeNode<string> node5 = new("node5");
+        NTreeNode<string> node6 = new("node6");
+        NTreeNode<string> node7 = new("node7");
+        NTreeNode<string> node8 = new("node8");
+
+        tree.AddChild(root, node1);
+        tree.AddChild(root, node2);
+
+        tree.AddChild(node1, node3);
+        tree.AddChild(node1, node4);
+
+        tree.AddChild(node3, node5);
+
+        tree.AddChild(node5, node6);
+
+        tree.AddChild(node2, node7);
+
+        tree.AddChild(node7, node8);
+
+        List<NTreeNode<string>> flatTree = tree.ToList();
+
+        foreach (NTreeNode<string> node in flatTree)
+        {
+            Debug.WriteLine(node.Data);
+            Debug.WriteLine(node.Level);
+        }
+
+        Assert.Equal(0, root.Level);
+        Assert.Equal(1, node1.Level);
+        Assert.Equal(1, node2.Level);
+        Assert.Equal(2, node3.Level);
+        Assert.Equal(2, node4.Level);
+        Assert.Equal(3, node5.Level);
+        Assert.Equal(4, node6.Level);
+        Assert.Equal(2, node7.Level);
+        Assert.Equal(3, node8.Level);
+    }
 }
 
