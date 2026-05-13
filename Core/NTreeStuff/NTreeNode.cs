@@ -6,9 +6,10 @@ namespace Core.NTreeStuff
 {
     public class NTreeNode<T>
     {
-        public NTreeNode<T>? Parent;
-        public T? Data;
+        public NTreeNode<T>? Parent = null;
+        public T? Data = default;
         public List<NTreeNode<T>> Children = new();
+        public int Level = 0;
 
         public NTreeNode()
         {
