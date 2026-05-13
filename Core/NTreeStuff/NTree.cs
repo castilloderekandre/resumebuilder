@@ -111,7 +111,7 @@ namespace Core.NTreeStuff
 
         public NTreeNode<T>? FindNode(Predicate<NTreeNode<T>> predicate)
         {
-            foreach(NTreeNode<T> node in Traverse(root))
+            foreach(NTreeNode<T> node in TraverseDFS(root))
             {
                 if (predicate(node))
                     return node;
@@ -120,20 +120,43 @@ namespace Core.NTreeStuff
             return null;
         }
 
-        IEnumerable<NTreeNode<T>> Traverse(NTreeNode<T> node)
+        IEnumerable<NTreeNode<T>> TraverseDFS(NTreeNode<T> root)
         {
-            yield return node;
+            Stack<NTreeNode<T>> stack = new();
+            stack.Push(root);
 
-            foreach (NTreeNode<T> child in node.Children)
+            while (stack.Count > 0)
             {
-                foreach (NTreeNode<T> descendant in Traverse(child))
-                    yield return descendant;
+                NTreeNode<T> node = stack.Pop();
+                yield return node;
+
+                for (int i = node.Children.Count - 1; i >= 0; i--)
+                {
+                    stack.Push(node.Children[i]);
+                }
+            }
+        }
+
+        IEnumerable<NTreeNode<T>> TraverseBFS(NTreeNode<T> root)
+        {
+            Queue<NTreeNode<T>> queue = new();
+            queue.Enqueue(root);
+
+            while (queue.Count > 0)
+            {
+                NTreeNode<T> node = queue.Dequeue();
+                yield return node;
+
+                foreach (NTreeNode<T> child in node.Children)
+                {
+                    queue.Enqueue(child);
+                }
             }
         }
 
         public void ForEach(Action<NTreeNode<T>> action)
         {
-            foreach(NTreeNode<T> node in Traverse(root))
+            foreach(NTreeNode<T> node in TraverseDFS(root))
             {
                 action(node);
             }
@@ -143,21 +166,8 @@ namespace Core.NTreeStuff
         {
             List<NTreeNode<T>> list = []; 
 
-            foreach(NTreeNode<T> node in Traverse(root))
+            foreach(NTreeNode<T> node in TraverseDFS(root))
                 list.Add(node);
-
-            return list;
-        }
-
-        public List<T> DataToList()
-        {
-            List<T> list = [];
-
-            foreach(NTreeNode<T> node in Traverse(root))
-            {
-                if (node.Data is not null)
-                list.Add(node.Data);
-            }
 
             return list;
         }
