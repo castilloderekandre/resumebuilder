@@ -15,6 +15,11 @@ namespace Core.NTreeStuff
             Dictionary.Add(id_tracker++, root);
         }
 
+        public NTree(NTreeNode<T> rootNode)
+        {
+            root = rootNode;
+        }
+
         public NTree(List<NTreeNode<T>> list)
         {
             root.Children.AddRange(list);
@@ -30,20 +35,41 @@ namespace Core.NTreeStuff
             if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
                 throw new KeyNotFoundException();
 
+            return AddChild(parent, child);
+        }
+
+        public int AddChild(NTreeNode<T> parent, NTreeNode<T> child)
+        {
+            child.Parent = parent;
             parent.Children.Add(child);
+
+            AssignLevel(parent);
 
             Dictionary.Add(id_tracker, child);
 
             return id_tracker++;
         }
 
-        public int AddChild(NTreeNode<T> parent, NTreeNode<T> child)
+        void AssignLevel(NTreeNode<T> root)
         {
-            parent.Children.Add(child);
+            NTreeNode<T>? previousNode = null;
+            foreach (NTreeNode<T> node in TraverseBFS(root))
+            {
+                if (previousNode is null) 
+                { 
+                    previousNode = node;
+                    continue;
+                }
+                else if (previousNode.Parent == node.Parent)
+                {
+                    node.Level = previousNode.Level;
+                    continue;
+                }
+                else if (previousNode.Parent != node.Parent)
+                    node.Level = previousNode.Level + 1;
 
-            Dictionary.Add(id_tracker, child);
-
-            return id_tracker++;
+                previousNode = node;
+            }
         }
 
         public void AddRange(NTreeNode<T> parent, List<NTreeNode<T>> list)
@@ -57,40 +83,34 @@ namespace Core.NTreeStuff
             parent.Children.AddRange(list);
         }
 
-        public void RemoveNode(NTreeNode<T> nodeToRemove)
+        public void RemoveNode(NTreeNode<T> node)
         {
-            foreach (NTreeNode<T> node in root.Children)
-            {
-                if (node.Equals(nodeToRemove))
-                    node.Parent!.Children.Remove(nodeToRemove);
-            }
+            if (node.Parent is null)
+                return;
+
+            node.Parent.Children.Remove(node);
         }
 
-        public void RemoveNode(NTreeNode<T> parent, NTreeNode<T> node)
+        public void RemoveNodesWhere(Predicate<NTreeNode<T>> predicate)
         {
-            parent.Children.Remove(node);
-        }
-
-        public void RemoveNode(Predicate<NTreeNode<T>> predicate)
-        {
-            foreach(NTreeNode<T> node in root.Children)
+            ForEach((node) =>
             {
                 if (predicate(node))
                     node.Parent!.Children.Remove(node);
-            }
+            });
         }
 
         public NTreeNode<T>? GetNode(int id)
         {
-            if (Dictionary.ContainsKey(id))
-                return Dictionary[id];
+            if (Dictionary.TryGetValue(id, out NTreeNode<T>? node))
+                return node;
 
             return null;
         }
 
         public NTreeNode<T>? FindNode(Predicate<NTreeNode<T>> predicate)
         {
-            foreach (NTreeNode<T> node in Traverse(root))
+            foreach(NTreeNode<T> node in TraverseDFS(root))
             {
                 if (predicate(node))
                     return node;
@@ -99,14 +119,45 @@ namespace Core.NTreeStuff
             return null;
         }
 
-        IEnumerable<NTreeNode<T>> Traverse(NTreeNode<T> node)
+        IEnumerable<NTreeNode<T>> TraverseDFS(NTreeNode<T> root)
         {
-            yield return node;
+            Stack<NTreeNode<T>> stack = new();
+            stack.Push(root);
 
-            foreach (NTreeNode<T> child in node.Children)
+            while (stack.Count > 0)
             {
-                foreach (NTreeNode<T> descendant in Traverse(child))
-                    yield return descendant;
+                NTreeNode<T> node = stack.Pop();
+                yield return node;
+
+                for (int i = node.Children.Count - 1; i >= 0; i--)
+                {
+                    stack.Push(node.Children[i]);
+                }
+            }
+        }
+
+        IEnumerable<NTreeNode<T>> TraverseBFS(NTreeNode<T> root)
+        {
+            Queue<NTreeNode<T>> queue = new();
+            queue.Enqueue(root);
+
+            while (queue.Count > 0)
+            {
+                NTreeNode<T> node = queue.Dequeue();
+                yield return node;
+
+                foreach (NTreeNode<T> child in node.Children)
+                {
+                    queue.Enqueue(child);
+                }
+            }
+        }
+
+        public void ForEach(Action<NTreeNode<T>> action)
+        {
+            foreach(NTreeNode<T> node in TraverseDFS(root))
+            {
+                action(node);
             }
         }
 
@@ -114,7 +165,7 @@ namespace Core.NTreeStuff
         {
             List<NTreeNode<T>> list = []; 
 
-            foreach(NTreeNode<T> node in Traverse(root))
+            foreach(NTreeNode<T> node in TraverseDFS(root))
                 list.Add(node);
 
             return list;
