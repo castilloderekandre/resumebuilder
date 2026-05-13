@@ -57,7 +57,6 @@ namespace Core.NTreeStuff
             {
                 if (previousNode is null) 
                 { 
-                    node.Level = root.Level + 1;
                     previousNode = node;
                     continue;
                 }
