@@ -8,6 +8,7 @@ using System.Windows.Controls;
 
 namespace UI.Widgets.TreeViewControl
 {
+    // [TODO] Move items directly in NTree instead of flatTree. Clear items in ListBox and add new flatTree.
     internal class TreeViewController
     {
         ListBox _listBox;
