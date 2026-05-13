@@ -149,8 +149,8 @@ public class NTreeTests
 
         List<NTreeNode<string>> flatTree = tree.ToList();
 
-        foreach(string value in tree.DataToList())
-            Debug.WriteLine(value);
+        // foreach(string value in tree.DataToList())
+            // Debug.WriteLine(value);
 
         int index = flatTree.MoveItemUp(2);
 
@@ -187,8 +187,8 @@ public class NTreeTests
 
         List<NTreeNode<string>> flatTree = tree.ToList();
 
-        foreach(string value in tree.DataToList())
-            Debug.WriteLine(value);
+        // foreach(string value in tree.DataToList())
+            // Debug.WriteLine(value);
 
         int index = flatTree.MoveItemDown(7);
 
