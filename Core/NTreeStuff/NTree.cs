@@ -43,30 +43,34 @@ namespace Core.NTreeStuff
             child.Parent = parent;
             parent.Children.Add(child);
 
-            child.Level = child.Parent is not null ? child.Parent.Level + 1 : 0;
+            AssignLevel(parent);
 
             Dictionary.Add(id_tracker, child);
 
             return id_tracker++;
         }
 
-        public int AddChild(NTreeNode<T> parent, NTreeNode<T> child)
+        void AssignLevel(NTreeNode<T> root)
         {
-            child.Parent = parent;
-            parent.Children.Add(child);
-
-            NTreeNode<T> node = child;
-            int level = 0;
-            while (node.Parent is not null)
+            NTreeNode<T>? previousNode = null;
+            foreach (NTreeNode<T> node in TraverseBFS(root))
             {
-                node = node.Parent;
-                level++;
+                if (previousNode is null) 
+                { 
+                    node.Level = root.Level + 1;
+                    previousNode = node;
+                    continue;
+                }
+                else if (previousNode.Parent == node.Parent)
+                {
+                    node.Level = previousNode.Level;
+                    continue;
+                }
+                else if (previousNode.Parent != node.Parent)
+                    node.Level = previousNode.Level + 1;
+
+                previousNode = node;
             }
-            child.Level = level;
-
-            Dictionary.Add(id_tracker, child);
-
-            return id_tracker++;
         }
 
         public void AddRange(NTreeNode<T> parent, List<NTreeNode<T>> list)
