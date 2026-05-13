@@ -38,14 +38,7 @@ namespace Core.NTreeStuff
             child.Parent = parent;
             parent.Children.Add(child);
 
-            NTreeNode<T> node = child;
-            int level = 0;
-            while (node.Parent is not null)
-            {
-                node = node.Parent;
-                level++;
-            }
-            child.Level = level;
+            child.Level = child.Parent is not null ? child.Parent.Level + 1 : 0;
 
             Dictionary.Add(id_tracker, child);
 
