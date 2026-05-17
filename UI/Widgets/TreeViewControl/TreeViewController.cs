@@ -55,9 +55,9 @@ namespace UI.Widgets.TreeViewControl
             return _listBox.SelectedItem;
         }
 
-        public void AddItem<T>(NTreeNode<T> item)
+        public void AddItem(object item)
         {
-            _listBox.Items.Add(item.Data);
+            _listBox.Items.Add(item);
         }
 
         // [TODO] Implement custom ObservableCollection<T> to suppress UI refreshes
