@@ -13,15 +13,15 @@ namespace UI.Widgets.TreeViewControl
     {
         ListBox _listBox;
         NTree<object> _tree;
-        List<NTreeNode<object>> _flatTree;
+        List<NTreeNode<object>> _list;
 
         public TreeViewController(ListBox listBox, NTree<object> tree)
         {
             _listBox = listBox;
             _tree = tree;
 
-            _flatTree = _tree.ToList();
-            AddRange(_flatTree);
+            _list = _tree.List;
+            AddNodeList();
         }
 
         //public Resume? Resume { 
@@ -144,10 +144,17 @@ namespace UI.Widgets.TreeViewControl
 
         // [TODO] Implement custom ObservableCollection<T> to suppress UI refreshes
         // by manually raising NotifyCollectionChangedAction.Reset
-        public void AddRange<T>(List<NTreeNode<T>> treeList)
+        public void AddNodeList(bool skipFirstNode = true)
         {
-            foreach (NTreeNode<T> item in treeList)
-                _listBox.Items.Add(item.Data); // UI is refreshed for each Add() call
+            foreach (NTreeNode<object> node in _list)
+            {
+                if (skipFirstNode)
+                {
+                    skipFirstNode = false;
+                    continue;
+                }
+                _listBox.Items.Add(node); // UI is refreshed for each Add() call
+            }
         }
 
         public void RemoveItem(object item)
