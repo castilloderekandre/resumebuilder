@@ -27,62 +27,32 @@ namespace UI.Widgets.TreeViewControl
 
         public void MoveSelectedItemUp()
         {
-            int index = GetSelectedIndex();
-            index = _flatTree.MoveItemUp(index);
+            object selectedItem = GetSelectedItem();
+            _tree.MoveUp((NTreeNode<object>)selectedItem);
             _listBox.Items.Clear();
-            AddRange(_flatTree);
-            _listBox.SelectedIndex = index;
+            AddNodeList();
+            _listBox.SelectedItem = selectedItem;
             _listBox.Focus();
-            // MoveSelectedItemUpInListBox();
         }
 
         public void MoveSelectedItemDown()
         {
-            int index = GetSelectedIndex();
-            index = _flatTree.MoveItemDown(GetSelectedIndex());
+            object selectedItem = GetSelectedItem();
+            _tree.MoveDown((NTreeNode<object>)selectedItem);
             _listBox.Items.Clear();
-            AddRange(_flatTree);
-            _listBox.SelectedIndex = index;
+            AddNodeList();
+            _listBox.SelectedItem = selectedItem;
             _listBox.Focus();
-            // MoveSelectedItemDownInListBox();
-        }
-
-        private void MoveSelectedItemUpInListBox()
-        {
-            int index = GetSelectedIndex();
-            object? item = _listBox.SelectedItem;
-
-            if (item is null)
-                return;
-
-            _listBox.Items.RemoveAt(index);
-
-            index = --index < 0 ? 
-                _listBox.Items.Count : index;
-            _listBox.Items.Insert(index, item);
-            _listBox.SelectedItem = item;
-        }
-
-        private void MoveSelectedItemDownInListBox()
-        {
-
-            int index = GetSelectedIndex();
-            object? item = _listBox.SelectedItem;
-
-            if (item is null)
-                return;
-
-            _listBox.Items.RemoveAt(index);
-
-            index = ++index >= _listBox.Items.Count + 1 ? 
-                0 : index;
-            _listBox.Items.Insert(index, item);
-            _listBox.SelectedItem = item;
         }
 
         private int GetSelectedIndex()
         {
             return _listBox.SelectedIndex;
+        }
+
+        object GetSelectedItem()
+        {
+            return _listBox.SelectedItem;
         }
 
         public void AddItem<T>(NTreeNode<T> item)
