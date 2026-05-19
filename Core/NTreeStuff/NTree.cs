@@ -73,6 +73,46 @@ namespace Core.NTreeStuff
             }
         }
 
+        // [TODO] Rebuild list when moving nodes with Children.Count > 0
+
+        public void MoveUp(NTreeNode<T> node)
+        {
+            if (node.Parent is null)
+                return;
+
+            Move(node, node.Parent.Children.MoveItemUp, List.MoveItemUp);
+        }
+
+        public void MoveDown(NTreeNode<T> node)
+        {
+            if (node.Parent is null)
+                return;
+
+            Move(node, node.Parent.Children.MoveItemDown, List.MoveItemDown);
+        }
+
+        public void Move(NTreeNode<T> node, Action<int> moveInChildren, Action<int> moveInList)
+        {
+            int index = node.Parent!.Children.FindIndex(n => Object.ReferenceEquals(n, node));
+            moveInChildren(index);
+
+            if (node.Parent!.Children.Count > 0)
+            {
+                RebuildList();
+                return;
+            }
+
+            int listIndex = List.FindIndex(n => Object.ReferenceEquals(n, node));
+            moveInList(listIndex);
+        }
+
+        public void RebuildList()
+        {
+            List.Clear();
+
+            ForEach(node => List.Add(node));
+        }
+
         public void AddRange(NTreeNode<T> parent, List<NTreeNode<T>> list)
         {
             parent.Children.AddRange(list);
@@ -84,6 +124,7 @@ namespace Core.NTreeStuff
             parent.Children.AddRange(list);
         }
 
+        // [TODO] List removal
         public void RemoveNode(NTreeNode<T> node)
         {
             if (node.Parent is null)
@@ -97,16 +138,8 @@ namespace Core.NTreeStuff
             ForEach((node) =>
             {
                 if (predicate(node))
-                    node.Parent!.Children.Remove(node);
+                    RemoveNode(node);
             });
-        }
-
-        public NTreeNode<T>? GetNode(int id)
-        {
-            if (Dictionary.TryGetValue(id, out NTreeNode<T>? node))
-                return node;
-
-            return null;
         }
 
         public NTreeNode<T>? FindNode(Predicate<NTreeNode<T>> predicate)
