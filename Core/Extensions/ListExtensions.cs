@@ -10,63 +10,63 @@ namespace Core.Extensions
     {
         extension<T>(List<T> list)
         {
-            public int MoveItemUp(int index)
+            public void MoveItemUp(int index)
             {
-                if (index - 1 <= 0)
-                    return index;
+                if (index - 1 < 0)
+                    return;
                     // throw new IndexOutOfRangeException();
 
                 T auxiliary = list[index - 1];
                 list[index - 1] = list[index];
                 list[index] = auxiliary;
 
-                return index - 1;
+                return;
             }
-            public int MoveItemDown(int index)
+            public void MoveItemDown(int index)
             {
                 if (index + 1 >= list.Count)
-                    return index;
+                    return;
                     // throw new IndexOutOfRangeException();
 
                 T auxiliary = list[index + 1];
                 list[index + 1] = list[index];
                 list[index] = auxiliary;
 
-                return index + 1;
+                return;
             }
         }
 
         extension<T>(List<NTreeNode<T>> list)
         {
-            public int MoveItemUp(int index)
+            public void MoveItemUp(int index)
             {
-                if (index - 1 <= 0)
-                    return index;
+                if (index - 1 < 0)
+                    return;
 
                 NTreeNode<T> previousNode = list[index - 1];
                 NTreeNode<T> node = list[index];
                 if (previousNode.Parent is null || node.Parent is null || previousNode.Parent != node.Parent)
-                    return index;
+                    return;
 
                 list[index - 1] = node;
                 list[index] = previousNode;
 
-                return index - 1;
+                return;
             }
-            public int MoveItemDown(int index)
+            public void MoveItemDown(int index)
             {
                 if (index + 1 >= list.Count)
-                    return index;
+                    return;
 
                 NTreeNode<T> nextNode = list[index + 1];
                 NTreeNode<T> node = list[index];
                 if (nextNode.Parent is null || node.Parent is null || nextNode.Parent != node.Parent)
-                    return index;
+                    return;
 
                 list[index + 1] = node;
                 list[index] = nextNode;
 
-                return index + 1;
+                return;
             }
         }
     }
