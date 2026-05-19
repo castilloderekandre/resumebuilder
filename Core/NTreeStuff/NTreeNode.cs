@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Core.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Core.NTreeStuff
 {
+    // Implement FindIndex with finding object reference predicate
     public class NTreeNode<T>
     {
         public NTreeNode<T>? Parent = null;
@@ -24,6 +26,16 @@ namespace Core.NTreeStuff
         public NTreeNode(NTreeNode<T> parent)
         {
             Parent = parent;
+        }
+
+        // [TODO] Move item in NTree class List variable as well
+
+        public override string? ToString()
+        {
+            if (Data is null)
+                return null;
+
+            return Data.ToString();
         }
     }
 }

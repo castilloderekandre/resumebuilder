@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Core.Extensions;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Core.NTreeStuff
@@ -7,17 +10,20 @@ namespace Core.NTreeStuff
     public class NTree<T>
     {
         NTreeNode<T> root = new();
-        public Dictionary<int, NTreeNode<T>> Dictionary = new();
-        int id_tracker = 0;
+        HashSet<NTreeNode<T>> nodes = new();
+        public List<NTreeNode<T>> List { get; } = new();
 
         public NTree()
         {
-            Dictionary.Add(id_tracker++, root);
+            nodes.Add(root);
+            List.Add(root);
         }
 
         public NTree(NTreeNode<T> rootNode)
         {
             root = rootNode;
+            nodes.Add(root);
+            List.Add(root);
         }
 
         public NTree(List<NTreeNode<T>> list)
@@ -25,29 +31,24 @@ namespace Core.NTreeStuff
             root.Children.AddRange(list);
         }
 
-        public int AddChild(int id, T data)
-        {
-            return AddChild(id, new NTreeNode<T>(data));
-        }
-
-        public int AddChild(int id, NTreeNode<T> child)
-        {
-            if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
-                throw new KeyNotFoundException();
-
-            return AddChild(parent, child);
-        }
-
         public int AddChild(NTreeNode<T> parent, NTreeNode<T> child)
         {
+            if (!nodes.Contains(parent))
+                throw new ArgumentException("Parent does not exist in tree");
+
             child.Parent = parent;
             parent.Children.Add(child);
+            nodes.Add(child);
 
             AssignLevel(parent);
 
-            Dictionary.Add(id_tracker, child);
+            int index = List.FindIndex(node => Object.ReferenceEquals(parent, node)) + parent.Children.Count;
+            if (index > List.Count)
+                List.Add(child);
+            else
+                List.Insert(index, child);
 
-            return id_tracker++;
+            return index;
         }
 
         void AssignLevel(NTreeNode<T> root)
@@ -72,6 +73,46 @@ namespace Core.NTreeStuff
             }
         }
 
+        // [TODO] Rebuild list when moving nodes with Children.Count > 0
+
+        public void MoveUp(NTreeNode<T> node)
+        {
+            if (node.Parent is null)
+                return;
+
+            Move(node, node.Parent.Children.MoveItemUp, List.MoveItemUp);
+        }
+
+        public void MoveDown(NTreeNode<T> node)
+        {
+            if (node.Parent is null)
+                return;
+
+            Move(node, node.Parent.Children.MoveItemDown, List.MoveItemDown);
+        }
+
+        public void Move(NTreeNode<T> node, Action<int> moveInChildren, Action<int> moveInList)
+        {
+            int index = node.Parent!.Children.FindIndex(n => Object.ReferenceEquals(n, node));
+            moveInChildren(index);
+
+            if (node.Parent!.Children.Count > 0)
+            {
+                RebuildList();
+                return;
+            }
+
+            int listIndex = List.FindIndex(n => Object.ReferenceEquals(n, node));
+            moveInList(listIndex);
+        }
+
+        public void RebuildList()
+        {
+            List.Clear();
+
+            ForEach(node => List.Add(node));
+        }
+
         public void AddRange(NTreeNode<T> parent, List<NTreeNode<T>> list)
         {
             parent.Children.AddRange(list);
@@ -83,6 +124,7 @@ namespace Core.NTreeStuff
             parent.Children.AddRange(list);
         }
 
+        // [TODO] List removal
         public void RemoveNode(NTreeNode<T> node)
         {
             if (node.Parent is null)
@@ -96,16 +138,8 @@ namespace Core.NTreeStuff
             ForEach((node) =>
             {
                 if (predicate(node))
-                    node.Parent!.Children.Remove(node);
+                    RemoveNode(node);
             });
-        }
-
-        public NTreeNode<T>? GetNode(int id)
-        {
-            if (Dictionary.TryGetValue(id, out NTreeNode<T>? node))
-                return node;
-
-            return null;
         }
 
         public NTreeNode<T>? FindNode(Predicate<NTreeNode<T>> predicate)
@@ -159,16 +193,6 @@ namespace Core.NTreeStuff
             {
                 action(node);
             }
-        }
-
-        public List<NTreeNode<T>> ToList()
-        {
-            List<NTreeNode<T>> list = []; 
-
-            foreach(NTreeNode<T> node in TraverseDFS(root))
-                list.Add(node);
-
-            return list;
         }
     }
 }
