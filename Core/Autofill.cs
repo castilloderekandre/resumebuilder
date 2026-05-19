@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Forms.VisualStyles;
 
-namespace ResumeBuilder
+namespace Core
 {
     // Title, start date, end date, has one date, has no date, organization, has organization, address, has address, body
-    internal static class Autofill
+    public static class Autofill
     {
         static string[] jobTitles = ["Plumber", "Electrician", "Mechanic", "IT", "SWE", "Security", "Salesperson"];
         static string[] projectTitles = ["Tic-Tac-Toe", "Console App", "REST API Implementation", "Ubuntu Server"];
@@ -53,7 +52,7 @@ namespace ResumeBuilder
             bool hasAddress = random.NextDouble() < 0.5;
 
             return new Entry(
-                PickOne(titles),
+                PickOne(titles)!,
                 startDate,
                 endDate,
                 hasOneDate,
@@ -62,7 +61,7 @@ namespace ResumeBuilder
                 hasOrganization,
                 GenerateStreet(),
                 hasAddress,
-                PickOne(bodies)
+                PickOne(bodies)!
                 );
         }
 
