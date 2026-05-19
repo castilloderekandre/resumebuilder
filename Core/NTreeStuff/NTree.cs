@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Core.Extensions;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Core.NTreeStuff
@@ -7,17 +10,20 @@ namespace Core.NTreeStuff
     public class NTree<T>
     {
         NTreeNode<T> root = new();
-        public Dictionary<int, NTreeNode<T>> Dictionary = new();
-        int id_tracker = 0;
+        HashSet<NTreeNode<T>> nodes = new();
+        public List<NTreeNode<T>> List { get; } = new();
 
         public NTree()
         {
-            Dictionary.Add(id_tracker++, root);
+            nodes.Add(root);
+            List.Add(root);
         }
 
         public NTree(NTreeNode<T> rootNode)
         {
             root = rootNode;
+            nodes.Add(root);
+            List.Add(root);
         }
 
         public NTree(List<NTreeNode<T>> list)
@@ -25,29 +31,24 @@ namespace Core.NTreeStuff
             root.Children.AddRange(list);
         }
 
-        public int AddChild(int id, T data)
-        {
-            return AddChild(id, new NTreeNode<T>(data));
-        }
-
-        public int AddChild(int id, NTreeNode<T> child)
-        {
-            if (!Dictionary.TryGetValue(id, out NTreeNode<T>? parent))
-                throw new KeyNotFoundException();
-
-            return AddChild(parent, child);
-        }
-
         public int AddChild(NTreeNode<T> parent, NTreeNode<T> child)
         {
+            if (!nodes.Contains(parent))
+                throw new ArgumentException("Parent does not exist in tree");
+
             child.Parent = parent;
             parent.Children.Add(child);
+            nodes.Add(child);
 
             AssignLevel(parent);
 
-            Dictionary.Add(id_tracker, child);
+            int index = List.FindIndex(node => Object.ReferenceEquals(parent, node)) + parent.Children.Count;
+            if (index > List.Count)
+                List.Add(child);
+            else
+                List.Insert(index, child);
 
-            return id_tracker++;
+            return index;
         }
 
         void AssignLevel(NTreeNode<T> root)
@@ -159,16 +160,6 @@ namespace Core.NTreeStuff
             {
                 action(node);
             }
-        }
-
-        public List<NTreeNode<T>> ToList()
-        {
-            List<NTreeNode<T>> list = []; 
-
-            foreach(NTreeNode<T> node in TraverseDFS(root))
-                list.Add(node);
-
-            return list;
         }
     }
 }
