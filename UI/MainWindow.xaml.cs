@@ -21,9 +21,10 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        NTree<object> tree = new();
-        NTreeNode<object> node1 = new("section");
-        NTreeNode<object> node2 = new("section");
+        NTreeNode<object> root = new("root(resume)");
+        NTree<object> tree = new(root);
+        NTreeNode<object> node1 = new("section 1");
+        NTreeNode<object> node2 = new("section 2");
         NTreeNode<object> node3 = new("entry a");
         NTreeNode<object> node4 = new("entry b");
         NTreeNode<object> node5 = new("entry c");
@@ -31,8 +32,8 @@ public partial class MainWindow : Window
         NTreeNode<object> node7 = new("entry e");
         NTreeNode<object> node8 = new("entry f");
 
-        tree.AddChild(0, node1);
-        tree.AddChild(0, node2);
+        tree.AddChild(root, node1);
+        tree.AddChild(root, node2);
 
         tree.AddChild(node1, node3);
         tree.AddChild(node1, node4);
