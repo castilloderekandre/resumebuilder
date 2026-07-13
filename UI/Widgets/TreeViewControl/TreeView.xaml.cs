@@ -21,6 +21,13 @@ namespace UI.Widgets.TreeViewControl
     public partial class TreeView : UserControl
     {
         TreeViewController treeViewController;
+        public TreeView(string title)
+        {
+            InitializeComponent();
+            titleLabel.Content = title;
+            treeViewController = new(listBox);
+        }
+
         public TreeView(string title, NTree<object> treeItems)
         {
             InitializeComponent();
@@ -36,6 +43,11 @@ namespace UI.Widgets.TreeViewControl
         private void Down_Button_Click(object sender, RoutedEventArgs e)
         {
             treeViewController.MoveSelectedItemDown();
+        }
+
+        public void AddChild(NTreeNode<object> parent, NTreeNode<object> child)
+        {
+            treeViewController.AddChild(parent, child);
         }
 
         private void Item_Collection_Source_Change_Button_Click(object sender, RoutedEventArgs e)

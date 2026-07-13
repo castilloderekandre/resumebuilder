@@ -12,23 +12,33 @@ namespace UI.Widgets.TreeViewControl
     internal class TreeViewController
     {
         ListBox _listBox;
-        NTree<object> _tree;
-        List<NTreeNode<object>> _list;
+        NTree<object>? Tree { get; set
+            {
+                field = value;
+
+                if (value is null)
+                    return;
+
+                _listBox.Items.Clear();
+                AddNodeList();
+            } }
+
+        public TreeViewController(ListBox listBox)
+        {
+            _listBox = listBox;
+        }
 
         public TreeViewController(ListBox listBox, NTree<object> tree)
         {
             _listBox = listBox;
-            _tree = tree;
-
-            _list = _tree.List;
-            AddNodeList();
+            Tree = tree;
         }
 
 
         public void MoveSelectedItemUp()
         {
             object selectedItem = GetSelectedItem();
-            _tree.MoveUp((NTreeNode<object>)selectedItem);
+            Tree!.MoveUp((NTreeNode<object>)selectedItem);
             _listBox.Items.Clear();
             AddNodeList();
             _listBox.SelectedItem = selectedItem;
@@ -38,7 +48,7 @@ namespace UI.Widgets.TreeViewControl
         public void MoveSelectedItemDown()
         {
             object selectedItem = GetSelectedItem();
-            _tree.MoveDown((NTreeNode<object>)selectedItem);
+            Tree!.MoveDown((NTreeNode<object>)selectedItem);
             _listBox.Items.Clear();
             AddNodeList();
             _listBox.SelectedItem = selectedItem;
@@ -55,16 +65,16 @@ namespace UI.Widgets.TreeViewControl
             return _listBox.SelectedItem;
         }
 
-        public void AddItem(object item)
+        public void AddChild(NTreeNode<object> parent, NTreeNode<object> child)
         {
-            _listBox.Items.Add(item);
+            Tree!.AddChild(parent, child);
         }
 
         // [TODO] Implement custom ObservableCollection<T> to suppress UI refreshes
         // by manually raising NotifyCollectionChangedAction.Reset
         public void AddNodeList(bool skipFirstNode = true)
         {
-            foreach (NTreeNode<object> node in _list)
+            foreach (NTreeNode<object> node in Tree!.List)
             {
                 if (skipFirstNode)
                 {
